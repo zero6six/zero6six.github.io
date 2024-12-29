@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://zero6six.github.io/CTF/Hackergame2024/WP/">
+      
       
         <link rel="prev" href="../../24%E5%9B%BD%E8%B5%9B/WP/">
       
@@ -110,6 +112,43 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
   </nav>
   
@@ -158,7 +197,7 @@
         
   
   <span class="md-ellipsis">
-    Welcome to MkDocs
+    凌六博客
   </span>
   
 
@@ -2702,7 +2741,7 @@
 </ol>
 <h3 id="_2">打不开的盒</h3>
 <p>https://www.viewstl.com/</p>
-<p><img alt="" src="../attachments/Pasted%20image%2020241102134602.png" />
+<p><img alt="" src="../attachments/Pasted%20image%2020241102134602.png" /><br />
 <img alt="" src="../attachments/Pasted%20image%2020241102134605.png" /></p>
 <p>flag{Dr4W_Us!nG_fR3E_C4D!!w0W}</p>
 <h3 id="_3">每日论文太多了！</h3>
@@ -2710,35 +2749,35 @@
 <p><img alt="" src="../attachments/Pasted%20image%2020241102135824.png" /></p>
 <h3 id="_4">比大小王</h3>
 <p>反复拷打 Copilot，最终得到在浏览器控制台内执行如下代码</p>
-<pre><code class="language-js">(function autoPlayGame() {
-  function simulateKeyPress(key) {
-    document.dispatchEvent(new KeyboardEvent('keydown', { key }));
-  }
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="nx">autoPlayGame</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">simulateKeyPress</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">KeyboardEvent</span><span class="p">(</span><span class="s1">&#39;keydown&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="p">}));</span>
+<span class="w">  </span><span class="p">}</span>
 
-  function chooseAnswer() {
-    if (!state.allowInput) {
-      return;
-    }
-    const [value1, value2] = [state.value1, state.value2];
-    const choice = value1 &lt; value2 ? '&lt;' : '&gt;';
-    simulateKeyPress(choice === '&lt;' ? 'ArrowLeft' : 'ArrowRight');
-  }
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">chooseAnswer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">allowInput</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">value1</span><span class="p">,</span><span class="w"> </span><span class="nx">value2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">state</span><span class="p">.</span><span class="nx">value1</span><span class="p">,</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">value2</span><span class="p">];</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">choice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">value1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">value2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;&lt;&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&gt;&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">simulateKeyPress</span><span class="p">(</span><span class="nx">choice</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;&lt;&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;ArrowLeft&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ArrowRight&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
 
-  function startAutoPlay() {
-    const intervalId = setInterval(() =&gt; {
-      if (state.stopUpdate || state.score1 === 100) {
-        clearInterval(intervalId);
-        return;
-      }
-      chooseAnswer();
-    }, 1); // Adjust the interval if needed
-  }
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">startAutoPlay</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">intervalId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">stopUpdate</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">score1</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">intervalId</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="nx">chooseAnswer</span><span class="p">();</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Adjust the interval if needed</span>
+<span class="w">  </span><span class="p">}</span>
 
-  document.addEventListener('load', loadGame());
-  // Start the auto play after a slight delay to ensure the game is fully loaded
-  setTimeout(startAutoPlay, 1000);
-})();
-</code></pre>
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">loadGame</span><span class="p">());</span>
+<span class="w">  </span><span class="c1">// Start the auto play after a slight delay to ensure the game is fully loaded</span>
+<span class="w">  </span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">startAutoPlay</span><span class="p">,</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<span class="p">})();</span>
+</code></pre></div>
 <h3 id="40">旅行照片 4.0</h3>
 <h4 id="1-2">题目 1-2</h4>
 <p><img alt="" src="../attachments/Pasted%20image%2020241102150420.png" /></p>
@@ -2755,7 +2794,7 @@
 <p>在 b 站搜索四编组动车，在 BV1db421t7DW 下看到这么一条评论。</p>
 <p><img alt="" src="../attachments/Pasted%20image%2020241102163113.png" /></p>
 <p><img alt="" src="../attachments/Pasted%20image%2020241102163123.png" /></p>
-<p>得到关键信息：怀柔号。
+<p>得到关键信息：怀柔号。<br />
 <img alt="" src="../attachments/Pasted%20image%2020241102163218.png" /></p>
 <p>百度地图先搜索北京，再搜“动车运用所”得到答案：</p>
 <p><img alt="" src="../attachments/Pasted%20image%2020241102163312.png" /></p>
@@ -2764,224 +2803,224 @@
 <h4 id="_6">设计字节转图片</h4>
 <p>使用 RGB 分别存储数据，RGB 每种的取值为 0~255，因此 8 取 1 映射至 32 种颜色。8 位 32 进制颜色索引能转化成 5 位 256 进制数。要使读图时不读填充的空数据，可在开始时设置“像素头”，在最开始的 4 个字节中存储之后要读取的字节数，python 脚本实现如下。</p>
 <p>文件转图片：</p>
-<pre><code class="language-python">import struct
-from pathlib import Path
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">struct</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
-# 定义：0-31 种颜色叫 32 进制颜色索引
-# 颜色索引对应的 0-255 颜色值叫做 256 进制等效颜色
-# 8 位 32 进制颜色索引转换为 5 字节。
+<span class="c1"># 定义：0-31 种颜色叫 32 进制颜色索引</span>
+<span class="c1"># 颜色索引对应的 0-255 颜色值叫做 256 进制等效颜色</span>
+<span class="c1"># 8 位 32 进制颜色索引转换为 5 字节。</span>
 
-def colorIndex_to_color(colorIndex:int)-&gt; int:
-    '''将 32 进制颜色索引转换为 256 进制等效颜色\n
-    例：颜色值为 4 12 之类的中间量\n
-    单数字对一个中心颜色的映射'''
-    return colorIndex*8+4
+<span class="k">def</span> <span class="nf">colorIndex_to_color</span><span class="p">(</span><span class="n">colorIndex</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;将 32 进制颜色索引转换为 256 进制等效颜色\n</span>
+<span class="sd">    例：颜色值为 4 12 之类的中间量\n</span>
+<span class="sd">    单数字对一个中心颜色的映射&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">colorIndex</span><span class="o">*</span><span class="mi">8</span><span class="o">+</span><span class="mi">4</span>
 
-def base256_to_base32(intList:list)-&gt; list:
-    '''将 5 位 256 进制数列表转换为 8 位 32 进制数列表'''
-    number = intList[0]*256**4 + intList[1]*256**3 + intList[2]*256**2 + intList[3]*256 + intList[4]
-    return [number//32**7, number//32**6%32, number//32**5%32, number//32**4%32, number//32**3%32, number//32**2%32, number//32%32, number%32]
+<span class="k">def</span> <span class="nf">base256_to_base32</span><span class="p">(</span><span class="n">intList</span><span class="p">:</span><span class="nb">list</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;将 5 位 256 进制数列表转换为 8 位 32 进制数列表&#39;&#39;&#39;</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="n">intList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">256</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="n">intList</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">256</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">intList</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">256</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">intList</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mi">256</span> <span class="o">+</span> <span class="n">intList</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">number</span><span class="o">//</span><span class="mi">32</span><span class="o">**</span><span class="mi">7</span><span class="p">,</span> <span class="n">number</span><span class="o">//</span><span class="mi">32</span><span class="o">**</span><span class="mi">6</span><span class="o">%</span><span class="mi">32</span><span class="p">,</span> <span class="n">number</span><span class="o">//</span><span class="mi">32</span><span class="o">**</span><span class="mi">5</span><span class="o">%</span><span class="mi">32</span><span class="p">,</span> <span class="n">number</span><span class="o">//</span><span class="mi">32</span><span class="o">**</span><span class="mi">4</span><span class="o">%</span><span class="mi">32</span><span class="p">,</span> <span class="n">number</span><span class="o">//</span><span class="mi">32</span><span class="o">**</span><span class="mi">3</span><span class="o">%</span><span class="mi">32</span><span class="p">,</span> <span class="n">number</span><span class="o">//</span><span class="mi">32</span><span class="o">**</span><span class="mi">2</span><span class="o">%</span><span class="mi">32</span><span class="p">,</span> <span class="n">number</span><span class="o">//</span><span class="mi">32</span><span class="o">%</span><span class="mi">32</span><span class="p">,</span> <span class="n">number</span><span class="o">%</span><span class="mi">32</span><span class="p">]</span>
 
-def byte5_to_color8(byte:bytes)-&gt; bytes:
-    '''将 5 个字节转换为 8 个 256 进制等效颜色'''
-    colorBytes = [color for color in byte]     # bytes -&gt; list
-    colorBytes = base256_to_base32(colorBytes) # 转成 32 进制颜色索引
-    colorBytes = [colorIndex_to_color(color) for color in colorBytes] # 转成 256 进制等效颜色
-    return bytes(colorBytes) # List -&gt; bytes
+<span class="k">def</span> <span class="nf">byte5_to_color8</span><span class="p">(</span><span class="n">byte</span><span class="p">:</span><span class="nb">bytes</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;将 5 个字节转换为 8 个 256 进制等效颜色&#39;&#39;&#39;</span>
+    <span class="n">colorBytes</span> <span class="o">=</span> <span class="p">[</span><span class="n">color</span> <span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">byte</span><span class="p">]</span>     <span class="c1"># bytes -&gt; list</span>
+    <span class="n">colorBytes</span> <span class="o">=</span> <span class="n">base256_to_base32</span><span class="p">(</span><span class="n">colorBytes</span><span class="p">)</span> <span class="c1"># 转成 32 进制颜色索引</span>
+    <span class="n">colorBytes</span> <span class="o">=</span> <span class="p">[</span><span class="n">colorIndex_to_color</span><span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colorBytes</span><span class="p">]</span> <span class="c1"># 转成 256 进制等效颜色</span>
+    <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">colorBytes</span><span class="p">)</span> <span class="c1"># List -&gt; bytes</span>
 
-def bytes_to_colors(bytes:bytearray)-&gt; bytearray:
-    '''将字节流转换为等效颜色字节流，统一使用 bytearray\n
-    源 bytes 不是 5 的倍数时，末尾补 0\n
-    只有最后一组不足 5 位时才会补 0 ，其他组没有补 0'''
-    if len(bytes)%5 != 0:
-        bytes += b'\x00'*(5-len(bytes)%5)
-    colorarary = bytearray()
-    for i in range(0, len(bytes), 5):
-        colorarary += byte5_to_color8(bytes[i:i+5])
-    return colorarary
+<span class="k">def</span> <span class="nf">bytes_to_colors</span><span class="p">(</span><span class="nb">bytes</span><span class="p">:</span><span class="nb">bytearray</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">bytearray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;将字节流转换为等效颜色字节流，统一使用 bytearray\n</span>
+<span class="sd">    源 bytes 不是 5 的倍数时，末尾补 0\n</span>
+<span class="sd">    只有最后一组不足 5 位时才会补 0 ，其他组没有补 0&#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">bytes</span><span class="p">)</span><span class="o">%</span><span class="mi">5</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">bytes</span> <span class="o">+=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">5</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="nb">bytes</span><span class="p">)</span><span class="o">%</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">colorarary</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nb">bytes</span><span class="p">),</span> <span class="mi">5</span><span class="p">):</span>
+        <span class="n">colorarary</span> <span class="o">+=</span> <span class="n">byte5_to_color8</span><span class="p">(</span><span class="nb">bytes</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">5</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">colorarary</span>
 
-def colors_to_bmp_data(colors:bytearray, width:int)-&gt; tuple[bytearray, int]:
-    '''将等效颜色字节流转换为由 bmp 实际数据和 bmp 高度的列表'''
-    data = bytearray()
-    # bmp 在色深为 24 时一行为 3*width 字节，不足 4 的倍数时补 0
-    line_data_bytes = 3*width
-    line_addition = (4 - line_data_bytes % 4) % 4
-    line_bytes = line_data_bytes + line_addition
-    for i in range(0, len(colors), line_data_bytes):
-        data += colors[i:i+line_data_bytes]
-        data += b'\x00'*(line_addition)
-    # 最后一行像素数不足时补 0
-    data += b'\x00'*((line_bytes - len(data)%line_bytes) % line_bytes)
-    height = len(data)//line_bytes
-    return (data, height)
+<span class="k">def</span> <span class="nf">colors_to_bmp_data</span><span class="p">(</span><span class="n">colors</span><span class="p">:</span><span class="nb">bytearray</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">bytearray</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;将等效颜色字节流转换为由 bmp 实际数据和 bmp 高度的列表&#39;&#39;&#39;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">()</span>
+    <span class="c1"># bmp 在色深为 24 时一行为 3*width 字节，不足 4 的倍数时补 0</span>
+    <span class="n">line_data_bytes</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">width</span>
+    <span class="n">line_addition</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="n">line_data_bytes</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span>
+    <span class="n">line_bytes</span> <span class="o">=</span> <span class="n">line_data_bytes</span> <span class="o">+</span> <span class="n">line_addition</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">line_data_bytes</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">+=</span> <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">line_data_bytes</span><span class="p">]</span>
+        <span class="n">data</span> <span class="o">+=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="o">*</span><span class="p">(</span><span class="n">line_addition</span><span class="p">)</span>
+    <span class="c1"># 最后一行像素数不足时补 0</span>
+    <span class="n">data</span> <span class="o">+=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="o">*</span><span class="p">((</span><span class="n">line_bytes</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">%</span><span class="n">line_bytes</span><span class="p">)</span> <span class="o">%</span> <span class="n">line_bytes</span><span class="p">)</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">//</span><span class="n">line_bytes</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
 
-def file_to_bmp_bytes(file:str, width:int)-&gt; bytearray:
-    '''将文件转换为 bmp 数据'''
-    with open(file, 'rb') as f:
-        file_bytes = bytearray(f.read())
-    pix_header = bytearray(struct.pack('&lt;i', len(file_bytes)))
-    # 用最开始存储数据的 4 个字节存后续要读多少字节
-    file_bytes = pix_header + file_bytes
-    colors = bytes_to_colors(file_bytes)
-    bmp_data, height = colors_to_bmp_data(colors, width)
-    bmp_data_len = len(bmp_data)
-    bmp_file_len = 54 + bmp_data_len
-    bmp_file_header = bytearray(b'\x42\x4D'+struct.pack('&lt;i', bmp_file_len)+b'\x00\x00\x00\x00'+b'\x36\x00\x00\x00'+b'\x28\x00\x00\x00'+struct.pack('&lt;i', width)+struct.pack('&lt;i', height)+b'\x01\x00'+b'\x18\x00'+b'\x00\x00\x00\x00'+struct.pack('&lt;i', bmp_data_len)+b'\x25\x16\x00\x00'+b'\x25\x16\x00\x00'+b'\x00\x00\x00\x00'+b'\x00\x00\x00\x00')
-    bmp_file = bmp_file_header + bmp_data
-    print(f&quot;转换的文件宽度为 {width} 像素，高度为 {height} 像素&quot;)
+<span class="k">def</span> <span class="nf">file_to_bmp_bytes</span><span class="p">(</span><span class="n">file</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">bytearray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;将文件转换为 bmp 数据&#39;&#39;&#39;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">file_bytes</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">pix_header</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&lt;i&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">file_bytes</span><span class="p">)))</span>
+    <span class="c1"># 用最开始存储数据的 4 个字节存后续要读多少字节</span>
+    <span class="n">file_bytes</span> <span class="o">=</span> <span class="n">pix_header</span> <span class="o">+</span> <span class="n">file_bytes</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="n">bytes_to_colors</span><span class="p">(</span><span class="n">file_bytes</span><span class="p">)</span>
+    <span class="n">bmp_data</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">colors_to_bmp_data</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+    <span class="n">bmp_data_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">bmp_data</span><span class="p">)</span>
+    <span class="n">bmp_file_len</span> <span class="o">=</span> <span class="mi">54</span> <span class="o">+</span> <span class="n">bmp_data_len</span>
+    <span class="n">bmp_file_header</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x42\x4D</span><span class="s1">&#39;</span><span class="o">+</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&lt;i&#39;</span><span class="p">,</span> <span class="n">bmp_file_len</span><span class="p">)</span><span class="o">+</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\x00\x00\x00</span><span class="s1">&#39;</span><span class="o">+</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x36\x00\x00\x00</span><span class="s1">&#39;</span><span class="o">+</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x28\x00\x00\x00</span><span class="s1">&#39;</span><span class="o">+</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&lt;i&#39;</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span><span class="o">+</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&lt;i&#39;</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span><span class="o">+</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x01\x00</span><span class="s1">&#39;</span><span class="o">+</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x18\x00</span><span class="s1">&#39;</span><span class="o">+</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\x00\x00\x00</span><span class="s1">&#39;</span><span class="o">+</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&lt;i&#39;</span><span class="p">,</span> <span class="n">bmp_data_len</span><span class="p">)</span><span class="o">+</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x25\x16\x00\x00</span><span class="s1">&#39;</span><span class="o">+</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x25\x16\x00\x00</span><span class="s1">&#39;</span><span class="o">+</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\x00\x00\x00</span><span class="s1">&#39;</span><span class="o">+</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\x00\x00\x00</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">bmp_file</span> <span class="o">=</span> <span class="n">bmp_file_header</span> <span class="o">+</span> <span class="n">bmp_data</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;转换的文件宽度为 </span><span class="si">{</span><span class="n">width</span><span class="si">}</span><span class="s2"> 像素，高度为 </span><span class="si">{</span><span class="n">height</span><span class="si">}</span><span class="s2"> 像素&quot;</span><span class="p">)</span>
 
-    return bmp_file
+    <span class="k">return</span> <span class="n">bmp_file</span>
 
-root = Path('/home/user')
-a = root/input('input: ').strip()
-b = root/input('output: ').strip()
-bmp_bytes = file_to_bmp_bytes(a, 512)
-with open(b, 'wb') as f:
-    f.write(bmp_bytes)
-</code></pre>
+<span class="n">root</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;/home/user&#39;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">root</span><span class="o">/</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;input: &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">root</span><span class="o">/</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;output: &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">bmp_bytes</span> <span class="o">=</span> <span class="n">file_to_bmp_bytes</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">512</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">bmp_bytes</span><span class="p">)</span>
+</code></pre></div>
 <p>图片转文件：</p>
-<pre><code class="language-python">import struct
-from PIL import Image
-from pathlib import Path
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">struct</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
-def color_to_colorIndex(color:int)-&gt; int:
-    '''将 256 进制等效颜色转换为 32 进制颜色索引\n
-    多颜色对单数字的映射'''
-    return color//8
+<span class="k">def</span> <span class="nf">color_to_colorIndex</span><span class="p">(</span><span class="n">color</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;将 256 进制等效颜色转换为 32 进制颜色索引\n</span>
+<span class="sd">    多颜色对单数字的映射&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">color</span><span class="o">//</span><span class="mi">8</span>
 
-def base32_to_base256(intList:list)-&gt; list:
-    '''将 8 位 32 进制数转换为 5 位 256 进制数'''
-    number = intList[0]*32**7 + intList[1]*32**6 + intList[2]*32**5 + intList[3]*32**4 + intList[4]*32**3 + intList[5]*32**2 + intList[6]*32 + intList[7]
-    return [number//256**4, (number//256**3)%256, (number//256**2)%256, (number//256)%256, number%256]
+<span class="k">def</span> <span class="nf">base32_to_base256</span><span class="p">(</span><span class="n">intList</span><span class="p">:</span><span class="nb">list</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;将 8 位 32 进制数转换为 5 位 256 进制数&#39;&#39;&#39;</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="n">intList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">32</span><span class="o">**</span><span class="mi">7</span> <span class="o">+</span> <span class="n">intList</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">32</span><span class="o">**</span><span class="mi">6</span> <span class="o">+</span> <span class="n">intList</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">32</span><span class="o">**</span><span class="mi">5</span> <span class="o">+</span> <span class="n">intList</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mi">32</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="n">intList</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="mi">32</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">intList</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="mi">32</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">intList</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="mi">32</span> <span class="o">+</span> <span class="n">intList</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">number</span><span class="o">//</span><span class="mi">256</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="n">number</span><span class="o">//</span><span class="mi">256</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span><span class="o">%</span><span class="mi">256</span><span class="p">,</span> <span class="p">(</span><span class="n">number</span><span class="o">//</span><span class="mi">256</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">%</span><span class="mi">256</span><span class="p">,</span> <span class="p">(</span><span class="n">number</span><span class="o">//</span><span class="mi">256</span><span class="p">)</span><span class="o">%</span><span class="mi">256</span><span class="p">,</span> <span class="n">number</span><span class="o">%</span><span class="mi">256</span><span class="p">]</span>
 
-def color8_to_byte5(colorBytes:bytes)-&gt; bytes:
-    '''将 8 个等效颜色字节转换为 5 字节'''
-    colorBytes = [color_to_colorIndex(color) for color in colorBytes] # 转成 32 进制数 | bytes -&gt; list
-    colorBytes = base32_to_base256(colorBytes) # 转成 256 进制
-    return bytes(colorBytes) # List -&gt; bytes
+<span class="k">def</span> <span class="nf">color8_to_byte5</span><span class="p">(</span><span class="n">colorBytes</span><span class="p">:</span><span class="nb">bytes</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;将 8 个等效颜色字节转换为 5 字节&#39;&#39;&#39;</span>
+    <span class="n">colorBytes</span> <span class="o">=</span> <span class="p">[</span><span class="n">color_to_colorIndex</span><span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colorBytes</span><span class="p">]</span> <span class="c1"># 转成 32 进制数 | bytes -&gt; list</span>
+    <span class="n">colorBytes</span> <span class="o">=</span> <span class="n">base32_to_base256</span><span class="p">(</span><span class="n">colorBytes</span><span class="p">)</span> <span class="c1"># 转成 256 进制</span>
+    <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">colorBytes</span><span class="p">)</span> <span class="c1"># List -&gt; bytes</span>
 
-def colors_to_bytes(colors:bytearray)-&gt; bytearray:
-    '''将等效颜色字节流转换为字节流\n
-    源颜色字节不是5的倍数时，末尾补0'''
-    if len(colors)%8 != 0:
-        colors += b'\x00'*(8-len(colors)%8)
-    bytes = bytearray()
-    for i in range(0, len(colors), 8):
-        bytes += color8_to_byte5(colors[i:i+8])
-    return bytes
+<span class="k">def</span> <span class="nf">colors_to_bytes</span><span class="p">(</span><span class="n">colors</span><span class="p">:</span><span class="nb">bytearray</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">bytearray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;将等效颜色字节流转换为字节流\n</span>
+<span class="sd">    源颜色字节不是5的倍数时，末尾补0&#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span><span class="o">%</span><span class="mi">8</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">colors</span> <span class="o">+=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">8</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span><span class="o">%</span><span class="mi">8</span><span class="p">)</span>
+    <span class="nb">bytes</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="mi">8</span><span class="p">):</span>
+        <span class="nb">bytes</span> <span class="o">+=</span> <span class="n">color8_to_byte5</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">8</span><span class="p">])</span>
+    <span class="k">return</span> <span class="nb">bytes</span>
 
-def pic_to_colors(file: str, width: int, height: int) -&gt; bytearray:
-    '''读取图片文件，返回等效颜色字节流'''
-    img = Image.open(file)
-    img = img.convert('RGB')
-    img_width, img_height = img.size
-    colors = bytearray()
+<span class="k">def</span> <span class="nf">pic_to_colors</span><span class="p">(</span><span class="n">file</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytearray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;读取图片文件，返回等效颜色字节流&#39;&#39;&#39;</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">)</span>
+    <span class="n">img_width</span><span class="p">,</span> <span class="n">img_height</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">()</span>
 
-    for y in range(height):
-        for x in range(width):
-            # x*img_width//width 可以得到分块左上角坐标，加上 img_width//(2*width) 可以得到中心坐标
-            center_x = (x * img_width) // width + (img_width // (2 * width))
-            center_y = (y * img_height) // height + (img_height // (2 * height))
-            # getpixel 以左上角为原点
-            # 假设高度为 100，坐标为 0~99，因此从下到上的坐标 1 等于从上到下坐标 98，1+98+1=100
-            r, g, b = img.getpixel((center_x, img_height - center_y - 1))
-            for i in (b, g, r):
-                colors.append(i)
-            # RGB 翻转成 BGR，这样符合实际保存时的顺序
-            # 最终 colors 为等效颜色字节流
-    return colors
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
+            <span class="c1"># x*img_width//width 可以得到分块左上角坐标，加上 img_width//(2*width) 可以得到中心坐标</span>
+            <span class="n">center_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">img_width</span><span class="p">)</span> <span class="o">//</span> <span class="n">width</span> <span class="o">+</span> <span class="p">(</span><span class="n">img_width</span> <span class="o">//</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">width</span><span class="p">))</span>
+            <span class="n">center_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">*</span> <span class="n">img_height</span><span class="p">)</span> <span class="o">//</span> <span class="n">height</span> <span class="o">+</span> <span class="p">(</span><span class="n">img_height</span> <span class="o">//</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+            <span class="c1"># getpixel 以左上角为原点</span>
+            <span class="c1"># 假设高度为 100，坐标为 0~99，因此从下到上的坐标 1 等于从上到下坐标 98，1+98+1=100</span>
+            <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="n">center_x</span><span class="p">,</span> <span class="n">img_height</span> <span class="o">-</span> <span class="n">center_y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+                <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="c1"># RGB 翻转成 BGR，这样符合实际保存时的顺序</span>
+            <span class="c1"># 最终 colors 为等效颜色字节流</span>
+    <span class="k">return</span> <span class="n">colors</span>
 
-def pic_to_file_bytes(input_file: str, width: int, height: int):
-    colors = pic_to_colors(input_file, width, height)
-    colors = colors_to_bytes(colors)
-    data_len = struct.unpack('&lt;i', colors[:4])[0]
-    data = colors[4:4+data_len]
-    return data
+<span class="k">def</span> <span class="nf">pic_to_file_bytes</span><span class="p">(</span><span class="n">input_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="n">pic_to_colors</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="n">colors_to_bytes</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+    <span class="n">data_len</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;i&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="p">[:</span><span class="mi">4</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">4</span><span class="o">+</span><span class="n">data_len</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">data</span>
 
-file_bytes = pic_to_file_bytes('hackergame2024\\1.png', 128, 137)
-with open('hackergame2024\\aaa.bin', 'wb') as f:
-    f.write(file_bytes)
-</code></pre>
+<span class="n">file_bytes</span> <span class="o">=</span> <span class="n">pic_to_file_bytes</span><span class="p">(</span><span class="s1">&#39;hackergame2024</span><span class="se">\\</span><span class="s1">1.png&#39;</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">137</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;hackergame2024</span><span class="se">\\</span><span class="s1">aaa.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">file_bytes</span><span class="p">)</span>
+</code></pre></div>
 <h4 id="vnc">VNC 内操作</h4>
-<pre><code class="language-sh">split -b 32K /secret a
-# 将文件切分成 16 份分别转图片，以免图片过大，读取时有误差
-vim a.py
-# vim 内使用 :set paste 避免自动缩进，按 I 进入输入模式，然后进行如下操作
-</code></pre>
+<div class="highlight"><pre><span></span><code>split<span class="w"> </span>-b<span class="w"> </span>32K<span class="w"> </span>/secret<span class="w"> </span>a
+<span class="c1"># 将文件切分成 16 份分别转图片，以免图片过大，读取时有误差</span>
+vim<span class="w"> </span>a.py
+<span class="c1"># vim 内使用 :set paste 避免自动缩进，按 I 进入输入模式，然后进行如下操作</span>
+</code></pre></div>
 <p>将图片转文件脚本通过 pyautogui 模拟键盘输入到 VNC 中：</p>
-<pre><code class="language-python">import pyautogui
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pyautogui</span>
 
-file_str = r'''
-import struct
-from pathlib import Path
+<span class="n">file_str</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">import struct</span>
+<span class="s1">from pathlib import Path</span>
 
-def colorIndex_to_color(colorIndex:int)-&gt; int:
-    return colorIndex*8+4
+<span class="s1">def colorIndex_to_color(colorIndex:int)-&gt; int:</span>
+<span class="s1">    return colorIndex*8+4</span>
 
-def base256_to_base32(intList:list)-&gt; list:
-    number = intList[0]*256**4 + intList[1]*256**3 + intList[2]*256**2 + intList[3]*256 + intList[4]
-    return [number//32**7, number//32**6%32, number//32**5%32, number//32**4%32, number//32**3%32, number//32**2%32, number//32%32, number%32]
+<span class="s1">def base256_to_base32(intList:list)-&gt; list:</span>
+<span class="s1">    number = intList[0]*256**4 + intList[1]*256**3 + intList[2]*256**2 + intList[3]*256 + intList[4]</span>
+<span class="s1">    return [number//32**7, number//32**6%32, number//32**5%32, number//32**4%32, number//32**3%32, number//32**2%32, number//32%32, number%32]</span>
 
-def byte5_to_color8(byte:bytes)-&gt; bytes:
-    colorBytes = [color for color in byte]
-    colorBytes = base256_to_base32(colorBytes)
-    colorBytes = [colorIndex_to_color(color) for color in colorBytes]
-    return bytes(colorBytes)
+<span class="s1">def byte5_to_color8(byte:bytes)-&gt; bytes:</span>
+<span class="s1">    colorBytes = [color for color in byte]</span>
+<span class="s1">    colorBytes = base256_to_base32(colorBytes)</span>
+<span class="s1">    colorBytes = [colorIndex_to_color(color) for color in colorBytes]</span>
+<span class="s1">    return bytes(colorBytes)</span>
 
-def bytes_to_colors(bytes:bytearray)-&gt; bytearray:
-    if len(bytes)%5 != 0:
-        bytes += b'\x00'*(5-len(bytes)%5)
-    colorarary = bytearray()
-    for i in range(0, len(bytes), 5):
-        colorarary += byte5_to_color8(bytes[i:i+5])
-    return colorarary
+<span class="s1">def bytes_to_colors(bytes:bytearray)-&gt; bytearray:</span>
+<span class="s1">    if len(bytes)%5 != 0:</span>
+<span class="s1">        bytes += b&#39;\x00&#39;*(5-len(bytes)%5)</span>
+<span class="s1">    colorarary = bytearray()</span>
+<span class="s1">    for i in range(0, len(bytes), 5):</span>
+<span class="s1">        colorarary += byte5_to_color8(bytes[i:i+5])</span>
+<span class="s1">    return colorarary</span>
 
-def colors_to_bmp_data(colors:bytearray, width:int)-&gt; tuple[bytearray, int]:
-    data = bytearray()
-    line_data_bytes = 3*width
-    line_addition = (4 - line_data_bytes % 4) % 4
-    line_bytes = line_data_bytes + line_addition
-    for i in range(0, len(colors), line_data_bytes):
-        data += colors[i:i+line_data_bytes]
-        data += b'\x00'*(line_addition)
-    data += b'\x00'*((line_bytes - len(data)%line_bytes) % line_bytes)
-    height = len(data)//line_bytes
-    return (data, height)
+<span class="s1">def colors_to_bmp_data(colors:bytearray, width:int)-&gt; tuple[bytearray, int]:</span>
+<span class="s1">    data = bytearray()</span>
+<span class="s1">    line_data_bytes = 3*width</span>
+<span class="s1">    line_addition = (4 - line_data_bytes % 4) % 4</span>
+<span class="s1">    line_bytes = line_data_bytes + line_addition</span>
+<span class="s1">    for i in range(0, len(colors), line_data_bytes):</span>
+<span class="s1">        data += colors[i:i+line_data_bytes]</span>
+<span class="s1">        data += b&#39;\x00&#39;*(line_addition)</span>
+<span class="s1">    data += b&#39;\x00&#39;*((line_bytes - len(data)</span><span class="si">%li</span><span class="s1">ne_bytes) </span><span class="si">% li</span><span class="s1">ne_bytes)</span>
+<span class="s1">    height = len(data)//line_bytes</span>
+<span class="s1">    return (data, height)</span>
 
-def file_to_bmp_bytes(file:str, width:int)-&gt; bytearray:
-    with open(file, 'rb') as f:
-        file_bytes = bytearray(f.read())
-    pix_header = bytearray(struct.pack('&lt;i', len(file_bytes)))
-    file_bytes = pix_header + file_bytes
-    colors = bytes_to_colors(file_bytes)
-    bmp_data, height = colors_to_bmp_data(colors, width)
-    bmp_data_len = len(bmp_data)
-    bmp_file_len = 54 + bmp_data_len
-    bmp_file_header = bytearray(b'\x42\x4D'+struct.pack('&lt;i', bmp_file_len)+b'\x00\x00\x00\x00'+b'\x36\x00\x00\x00'+b'\x28\x00\x00\x00'+struct.pack('&lt;i', width)+struct.pack('&lt;i', height)+b'\x01\x00'+b'\x18\x00'+b'\x00\x00\x00\x00'+struct.pack('&lt;i', bmp_data_len)+b'\x25\x16\x00\x00'+b'\x25\x16\x00\x00'+b'\x00\x00\x00\x00'+b'\x00\x00\x00\x00')
-    bmp_file = bmp_file_header + bmp_data
-    print(f&quot;width: {width}, height: {height}&quot;)
-    return bmp_file
+<span class="s1">def file_to_bmp_bytes(file:str, width:int)-&gt; bytearray:</span>
+<span class="s1">    with open(file, &#39;rb&#39;) as f:</span>
+<span class="s1">        file_bytes = bytearray(f.read())</span>
+<span class="s1">    pix_header = bytearray(struct.pack(&#39;&lt;i&#39;, len(file_bytes)))</span>
+<span class="s1">    file_bytes = pix_header + file_bytes</span>
+<span class="s1">    colors = bytes_to_colors(file_bytes)</span>
+<span class="s1">    bmp_data, height = colors_to_bmp_data(colors, width)</span>
+<span class="s1">    bmp_data_len = len(bmp_data)</span>
+<span class="s1">    bmp_file_len = 54 + bmp_data_len</span>
+<span class="s1">    bmp_file_header = bytearray(b&#39;\x42\x4D&#39;+struct.pack(&#39;&lt;i&#39;, bmp_file_len)+b&#39;\x00\x00\x00\x00&#39;+b&#39;\x36\x00\x00\x00&#39;+b&#39;\x28\x00\x00\x00&#39;+struct.pack(&#39;&lt;i&#39;, width)+struct.pack(&#39;&lt;i&#39;, height)+b&#39;\x01\x00&#39;+b&#39;\x18\x00&#39;+b&#39;\x00\x00\x00\x00&#39;+struct.pack(&#39;&lt;i&#39;, bmp_data_len)+b&#39;\x25\x16\x00\x00&#39;+b&#39;\x25\x16\x00\x00&#39;+b&#39;\x00\x00\x00\x00&#39;+b&#39;\x00\x00\x00\x00&#39;)</span>
+<span class="s1">    bmp_file = bmp_file_header + bmp_data</span>
+<span class="s1">    print(f&quot;width: </span><span class="si">{width}</span><span class="s1">, height: </span><span class="si">{height}</span><span class="s1">&quot;)</span>
+<span class="s1">    return bmp_file</span>
 
-root = Path('/home/user')
-a = root/input('input: ').strip()
-b = root/input('output: ').strip()
-bmp_bytes = file_to_bmp_bytes(a, 128)
-with open(b, 'wb') as f:
-    f.write(bmp_bytes)
-'''
-print(len(file_str))
+<span class="s1">root = Path(&#39;/home/user&#39;)</span>
+<span class="s1">a = root/input(&#39;input: &#39;).strip()</span>
+<span class="s1">b = root/input(&#39;output: &#39;).strip()</span>
+<span class="s1">bmp_bytes = file_to_bmp_bytes(a, 128)</span>
+<span class="s1">with open(b, &#39;wb&#39;) as f:</span>
+<span class="s1">    f.write(bmp_bytes)</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">file_str</span><span class="p">))</span>
 
-# 等待几秒以便切换到目标窗口
-time.sleep(3)
-pyautogui.write(file_str)
-</code></pre>
-<pre><code class="language-sh"># 使用 Esc 然后输入 :wq
-python3 a.py
-&gt;&gt;&gt; aaa
-&gt;&gt;&gt; 1
-# 重复到 aap 和 16
-sha256sum a* # 校验原始分片的 sha256
-</code></pre>
+<span class="c1"># 等待几秒以便切换到目标窗口</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">pyautogui</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">file_str</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># 使用 Esc 然后输入 :wq</span>
+python3<span class="w"> </span>a.py
+&gt;&gt;&gt;<span class="w"> </span>aaa
+&gt;&gt;&gt;<span class="w"> </span><span class="m">1</span>
+<span class="c1"># 重复到 aap 和 16</span>
+sha256sum<span class="w"> </span>a*<span class="w"> </span><span class="c1"># 校验原始分片的 sha256</span>
+</code></pre></div>
 <p>在 VNC 内用 Firefox 打开 BMP 文件，设置图片 CSS 样式为 image-rendering: pixelated; 进入全屏模式，放大到最大。然后截图 16 张保存并用上述 Python 脚本转成 16 个分片文件。</p>
 <p>在 linux 环境内使用 <code>cat a*.bin &gt; combinedfile.bin</code> 将 16 个分片恢复成原来的文件，提交后拿到 flag。</p>
 

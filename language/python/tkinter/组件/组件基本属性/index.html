@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://zero6six.github.io/language/python/tkinter/%E7%BB%84%E4%BB%B6/%E7%BB%84%E4%BB%B6%E5%9F%BA%E6%9C%AC%E5%B1%9E%E6%80%A7/">
+      
       
         <link rel="prev" href="../image/">
       
@@ -110,6 +112,43 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
   </nav>
   
@@ -158,7 +197,7 @@
         
   
   <span class="md-ellipsis">
-    Welcome to MkDocs
+    凌六博客
   </span>
   
 
@@ -2425,19 +2464,19 @@
   <h1>组件基本属性</h1>
 
 <p>组件基本属性可在创建时指定或使用 .config() 方法</p>
-<pre><code class="language-python">test.config(text=&quot;test&quot;)     # 设置文本
-test.config(bg=&quot;blue&quot;)       # 设置背景色为蓝色
-# test.config(bg=&quot;#323232&quot;)       # 设置背景色为#323232的黑色
-test.config(fg=&quot;green&quot;)      # 设置前景色为红色
-test.config(font=&quot;微软雅黑 15&quot;)   # 设置字体与大小（改字体大小即可改组件大小）
-test.config(width=10)        # 此处宽x高类似网格分布而非像素
-test.config(height=5)        # 此处宽x高类似网格分布而非像素
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">test</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>     <span class="c1"># 设置文本</span>
+<span class="n">test</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>       <span class="c1"># 设置背景色为蓝色</span>
+<span class="c1"># test.config(bg=&quot;#323232&quot;)       # 设置背景色为#323232的黑色</span>
+<span class="n">test</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">fg</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>      <span class="c1"># 设置前景色为红色</span>
+<span class="n">test</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">font</span><span class="o">=</span><span class="s2">&quot;微软雅黑 15&quot;</span><span class="p">)</span>   <span class="c1"># 设置字体与大小（改字体大小即可改组件大小）</span>
+<span class="n">test</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>        <span class="c1"># 此处宽x高类似网格分布而非像素</span>
+<span class="n">test</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>        <span class="c1"># 此处宽x高类似网格分布而非像素</span>
+</code></pre></div>
 <h3 id="_1">设置图片</h3>
 <p>该项 Button、Label 可用</p>
 <p>![[image#^bcacdb]]</p>
-<pre><code class="language-python">btn.config(image=img)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">btn</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">img</span><span class="p">)</span>
+</code></pre></div>
 
 
 

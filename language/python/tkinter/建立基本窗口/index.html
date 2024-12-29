@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://zero6six.github.io/language/python/tkinter/%E5%BB%BA%E7%AB%8B%E5%9F%BA%E6%9C%AC%E7%AA%97%E5%8F%A3/">
+      
       
         <link rel="prev" href="../../%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/">
       
@@ -110,6 +112,43 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
   </nav>
   
@@ -158,7 +197,7 @@
         
   
   <span class="md-ellipsis">
-    Welcome to MkDocs
+    凌六博客
   </span>
   
 
@@ -2490,50 +2529,50 @@
 
 <p><a href="https://www.tutorialspoint.com/python/python_gui_programming.htm">国外的菜鸟教程</a> 涵盖大部分内容。</p>
 <h3 id="_1">导包</h3>
-<pre><code class="language-python">import tkinter as tk     # 之后使用 tk.控件名访问控件
-#from tkinter import ttk # 新版组件，不会用喵
-#from tkinter import *   # 直接访问控件名
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>     <span class="c1"># 之后使用 tk.控件名访问控件</span>
+<span class="c1">#from tkinter import ttk # 新版组件，不会用喵</span>
+<span class="c1">#from tkinter import *   # 直接访问控件名</span>
+</code></pre></div>
 <h3 id="_2">设置窗口</h3>
-<pre><code class="language-python"># 创建一个窗口对象
-root = tk.Tk()
+<div class="highlight"><pre><span></span><code><span class="c1"># 创建一个窗口对象</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
 
-# 设置窗口标题
-root.title(&quot;空窗口&quot;)
+<span class="c1"># 设置窗口标题</span>
+<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;空窗口&quot;</span><span class="p">)</span>
 
-# 设置窗口大小
-root.geometry(&quot;300x200+250+350&quot;) # 在屏幕左上角往右 250px，往下 350px 打开窗口
+<span class="c1"># 设置窗口大小</span>
+<span class="n">root</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;300x200+250+350&quot;</span><span class="p">)</span> <span class="c1"># 在屏幕左上角往右 250px，往下 350px 打开窗口</span>
 
-root.attributes('-topmost', 1) # 窗口置顶
+<span class="n">root</span><span class="o">.</span><span class="n">attributes</span><span class="p">(</span><span class="s1">&#39;-topmost&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># 窗口置顶</span>
 
-# 进入主循环
-root.mainloop()
-</code></pre>
+<span class="c1"># 进入主循环</span>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</code></pre></div>
 <h4 id="label">设置 label</h4>
-<pre><code class="language-python">label = tk.Label(root, text='Hello World!')
-label.pack()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+<span class="n">label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</code></pre></div>
 <h4 id="_3">总览</h4>
-<pre><code class="language-python">import tkinter as tk
-from tkinter import ttk
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">ttk</span>
 
-# 创建一个窗口对象
-root = tk.Tk()
+<span class="c1"># 创建一个窗口对象</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
 
-# 设置窗口标题
-root.title(&quot;空窗口&quot;)
+<span class="c1"># 设置窗口标题</span>
+<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;空窗口&quot;</span><span class="p">)</span>
 
-# 设置窗口大小
-root.geometry(&quot;300x200&quot;)
-
-
-label = tk.Label(root, text='Hello World!')
-label.pack()
+<span class="c1"># 设置窗口大小</span>
+<span class="n">root</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;300x200&quot;</span><span class="p">)</span>
 
 
-# 进入主循环
-root.mainloop()
-</code></pre>
+<span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+<span class="n">label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+
+<span class="c1"># 进入主循环</span>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</code></pre></div>
 
 
 

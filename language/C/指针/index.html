@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://zero6six.github.io/language/C/%E6%8C%87%E9%92%88/">
+      
       
         <link rel="prev" href="../%E5%AD%97%E7%AC%A6%E4%B8%B2/">
       
@@ -110,6 +112,43 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
   </nav>
   
@@ -158,7 +197,7 @@
         
   
   <span class="md-ellipsis">
-    Welcome to MkDocs
+    凌六博客
   </span>
   
 
@@ -848,9 +887,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#string_array" class="md-nav__link">
     <span class="md-ellipsis">
-      字符串数组
+      字符串数组{#string_array}
     </span>
   </a>
   
@@ -2413,9 +2452,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#string_array" class="md-nav__link">
     <span class="md-ellipsis">
-      字符串数组
+      字符串数组{#string_array}
     </span>
   </a>
   
@@ -2444,14 +2483,14 @@
 <p>当你看到一个声明如 <code>char *p;</code> 时，这里的 <code>char *</code> 表示 <code>p</code> 是一个指向 <code>char</code> 类型的指针。这意味着 <code>p</code> 存储了一个内存地址，该地址指向一个 <code>char</code> 类型的值（通常是一个字符或一个字符串的首字符）。</p>
 <p>同样地，在数组声明中，如 <code>char *strings[];</code>，<code>char *</code> 表示数组的每个元素都是一个指向 <code>char</code> 的指针。这意味着 <code>strings</code> 是一个字符指针数组，可以存储多个指向字符串字面量或字符数组的指针。</p>
 <p>重要的是要区分声明和表达式中的 <code>*</code>。在声明中，<code>*</code> 表示指针类型；而在表达式中，<code>*</code> 通常用作解引用操作符，用于访问指针指向的值。例如：</p>
-<pre><code class="language-c">char c = 'A';
-char *p = &amp;c;  // 声明一个指向 char 的指针 p，并将其初始化为 c 的地址
-char d = *p;   // 使用解引用操作符 * 来访问 p 指向的值，即 c 的值，并将其赋值给 d
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
+<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">;</span><span class="w">  </span><span class="c1">// 声明一个指向 char 的指针 p，并将其初始化为 c 的地址</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="w">   </span><span class="c1">// 使用解引用操作符 * 来访问 p 指向的值，即 c 的值，并将其赋值给 d</span>
+</code></pre></div>
 <p>在这个例子中，<code>*p</code> 在表达式中用作解引用操作符，而 <code>char *p</code> 在声明中用作指定 <code>p</code> 是一个指向 <code>char</code> 的指针。</p>
 <p>因此，在理解 C 语言中的声明时，确实需要将 <code>*</code> 与前面的变量类型一起考虑，以确定声明的变量是指针还是其他类型的变量。</p>
 <p>另外，声明指针时可以 <code>int *p = NULL;</code> 来避免读写未初始化的指针，这种指针是用来之后保存地址用的。<code>char *a = NULL;sprintf(a, "%d", n);</code> 不能这么用，因为会往 NULL 的地方存数据。</p>
-<h3 id="_2">字符串数组</h3>
+<h3 id="string_array">字符串数组{#string_array}</h3>
 <p>在这个函数声明 <code>void fun(char *pa[]);</code> 中，<code>pa</code> 是一个数组类型的变量，其中数组的元素是指向 <code>char</code> 类型的指针。换句话说，<code>pa</code> 是一个字符指针数组。</p>
 <p>具体地：</p>
 <ul>
@@ -2460,20 +2499,20 @@ char d = *p;   // 使用解引用操作符 * 来访问 p 指向的值，即 c �
 </ul>
 <p>这种类型通常用于处理字符串数组，例如，在 C 语言中处理命令行参数时，<code>main</code> 函数的参数 <code>char *argv[]</code> 就是这种类型。每个 <code>argv[i]</code> 指向一个字符串（即一个字符数组的首地址）。</p>
 <p>以下是一个简单的示例，展示了如何使用这种类型的参数：</p>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
-void fun(char *pa[]) {
-    for (int i = 0; pa[i] != NULL; i++) {
-        printf(&quot;%s\n&quot;, pa[i]);
-    }
-}
+<span class="kt">void</span><span class="w"> </span><span class="nf">fun</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">pa</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">pa</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pa</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-int main() {
-    char *strings[] = {&quot;Hello&quot;, &quot;World&quot;, &quot;This&quot;, &quot;is&quot;, &quot;C&quot;};
-    fun(strings);
-    return 0;
-}
-</code></pre>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">strings</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;World&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;This&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;is&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="p">};</span>
+<span class="w">    </span><span class="n">fun</span><span class="p">(</span><span class="n">strings</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>在这个示例中，<code>strings</code> 是一个字符指针数组，<code>fun</code> 函数遍历这个数组并打印每个字符串。</p>
 
 

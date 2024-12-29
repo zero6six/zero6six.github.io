@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://zero6six.github.io/language/C/%E9%93%BE%E8%A1%A8/">
+      
       
         <link rel="prev" href="../%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/">
       
@@ -110,6 +112,43 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
   </nav>
   
@@ -158,7 +197,7 @@
         
   
   <span class="md-ellipsis">
-    Welcome to MkDocs
+    凌六博客
   </span>
   
 
@@ -2543,139 +2582,139 @@
 <p>#todo</p>
 <p>https://www.runoob.com/w3cnote/c-structures-intro.html</p>
 <h3 id="_1">基础示例</h3>
-<p><img alt="" src="../attachments/Pasted%20image%2020241210223102.png" />
+<p><img alt="" src="../attachments/Pasted%20image%2020241210223102.png" /><br />
 一个简单的，三个节点的示例链表如下所示，<code>p-&gt;next</code> 可以理解为 <code>(*p).next</code>。</p>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
 
-#define NULL 0
+<span class="cp">#define NULL 0</span>
 
-struct student
-{
-    long num;
-    float score;
-    struct student *next;
-};
+<span class="k">struct</span><span class="w"> </span><span class="nc">student</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">score</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">student</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
 
-void main()
-{
-    struct student a, b, c, *head, *p;
-    a.num = 99101; a.score = 89.5;
-    b.num = 99103; b.score = 90;
-    c.num = 99107; c.score = 85;//对节点的 num 和 score 成员赋值
-    head = &amp;a;//将节点 a 的起始地址赋给头指针 head
-    a.next = &amp;b;//将节点 b 的起始地址赋给 a 节点的 next 成员
-    b.next = &amp;c;
-    c.next = NULL;// c 节点的 next 成员不存放其他节点地址
-    p = head;//使 p 指针指向 a 节点
-    do
-    {
-        printf(&quot;%ld %5.1f\n&quot;, p-&gt;num, p-&gt;score);// 输出 p 指向的节点的数据
-        p = p-&gt;next;//使 p 指向下一节点
-    }while(p != NULL);//输出完 c 节点后 p 的值为 NULL
-    system(&quot;pause&quot;);
-}
-</code></pre>
+<span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">student</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99101</span><span class="p">;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">89.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">b</span><span class="p">.</span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99103</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">90</span><span class="p">;</span>
+<span class="w">    </span><span class="n">c</span><span class="p">.</span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99107</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">85</span><span class="p">;</span><span class="c1">//对节点的 num 和 score 成员赋值</span>
+<span class="w">    </span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span><span class="c1">//将节点 a 的起始地址赋给头指针 head</span>
+<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">;</span><span class="c1">//将节点 b 的起始地址赋给 a 节点的 next 成员</span>
+<span class="w">    </span><span class="n">b</span><span class="p">.</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">;</span>
+<span class="w">    </span><span class="n">c</span><span class="p">.</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="c1">// c 节点的 next 成员不存放其他节点地址</span>
+<span class="w">    </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">;</span><span class="c1">//使 p 指针指向 a 节点</span>
+<span class="w">    </span><span class="k">do</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%ld %5.1f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">score</span><span class="p">);</span><span class="c1">// 输出 p 指向的节点的数据</span>
+<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span><span class="c1">//使 p 指向下一节点</span>
+<span class="w">    </span><span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span><span class="c1">//输出完 c 节点后 p 的值为 NULL</span>
+<span class="w">    </span><span class="n">system</span><span class="p">(</span><span class="s">&quot;pause&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>一个复杂的，动态生成的链表如下。</p>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
 
-#define NULL 0
-#define LEN sizeof(struct student)
+<span class="cp">#define NULL 0</span>
+<span class="cp">#define LEN sizeof(struct student)</span>
 
-struct student
-{
-    long num;
-    float score;
-    struct student *next;
-};
+<span class="k">struct</span><span class="w"> </span><span class="nc">student</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">score</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">student</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
 
-struct student *create()
-{
-    struct student *p1, *p2, *head;
-    int num;
-    float score;
-    int n = 0;
+<span class="k">struct</span><span class="w"> </span><span class="nc">student</span><span class="w"> </span><span class="o">*</span><span class="n">create</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">student</span><span class="w"> </span><span class="o">*</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">p2</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">head</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">score</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 
-    head = NULL;
+<span class="w">    </span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
 
-    p1 = p2 = (struct student *)malloc(LEN); 
-    // 动态分配一块结构体大小的内存空间，返回指向这块内存空间的地址的指针
-    // 然后再把这个地址强制转换为 struct student 类型的指针
+<span class="w">    </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">student</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">LEN</span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="c1">// 动态分配一块结构体大小的内存空间，返回指向这块内存空间的地址的指针</span>
+<span class="w">    </span><span class="c1">// 然后再把这个地址强制转换为 struct student 类型的指针</span>
 
-    // 此处 p1 和 p2 指向同一块内存空间。
+<span class="w">    </span><span class="c1">// 此处 p1 和 p2 指向同一块内存空间。</span>
 
-    printf(&quot;please input num and score.\n&quot;);
-    scanf(&quot;%d,%f&quot;, &amp;p1-&gt;num, &amp;p1-&gt;score);  // `-&gt;` 优先级高于 `&amp;`，先取 p1 成员 num 然后取地址
-    // 数据存 p1=p2 中
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;please input num and score.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d,%f&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p1</span><span class="o">-&gt;</span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p1</span><span class="o">-&gt;</span><span class="n">score</span><span class="p">);</span><span class="w">  </span><span class="c1">// `-&gt;` 优先级高于 `&amp;`，先取 p1 成员 num 然后取地址</span>
+<span class="w">    </span><span class="c1">// 数据存 p1=p2 中</span>
 
-    while(p1-&gt;num != 0)
-    {
-        n ++;
-        if(n == 1)
-            head = p1;
-            // 头指针，指向第一个节点
-        else
-            p2-&gt;next = p1;
-            // p2 是前一个节点，p1 是当前节点，将前一个节点的 next 指向当前节点
-        p2 = p1;
-        // 将当前节点引用复制给 p2
-        p1 = (struct student *)malloc(sizeof(struct student));
-        // p1 重新初始化
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">p1</span><span class="o">-&gt;</span><span class="n">num</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">            </span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">// 头指针，指向第一个节点</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="n">p2</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">// p2 是前一个节点，p1 是当前节点，将前一个节点的 next 指向当前节点</span>
+<span class="w">        </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// 将当前节点引用复制给 p2</span>
+<span class="w">        </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">student</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">student</span><span class="p">));</span>
+<span class="w">        </span><span class="c1">// p1 重新初始化</span>
 
-        printf(&quot;please input num and score.\n&quot;);
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;please input num and score.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 
-        scanf(&quot;%d,%f&quot;, &amp;p1-&gt;num, &amp;p1-&gt;score);
-    }
-    p2-&gt;next = NULL;
-    return head;
-}
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d,%f&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p1</span><span class="o">-&gt;</span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p1</span><span class="o">-&gt;</span><span class="n">score</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">p2</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">head</span><span class="p">;</span>
+<span class="p">}</span>
 
-void printlist(struct student *head)
-{
-    struct student *p;
-    p = head;
-    if(head != NULL)
-    {
-        do
-        {
-            printf(&quot;num=%d score=%f\n&quot;, p-&gt;num, p-&gt;score);
-            p = p-&gt;next;
-        }while(p != NULL);
-    }
-}
+<span class="kt">void</span><span class="w"> </span><span class="n">printlist</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">student</span><span class="w"> </span><span class="o">*</span><span class="n">head</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">student</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">head</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">do</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;num=%d score=%f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">score</span><span class="p">);</span>
+<span class="w">            </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-void main()
-{
-    struct student *head;
-    head = create();
-    printlist(head);
-    system(&quot;pause&quot;);
-}
-</code></pre>
+<span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">student</span><span class="w"> </span><span class="o">*</span><span class="n">head</span><span class="p">;</span>
+<span class="w">    </span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create</span><span class="p">();</span>
+<span class="w">    </span><span class="n">printlist</span><span class="p">(</span><span class="n">head</span><span class="p">);</span>
+<span class="w">    </span><span class="n">system</span><span class="p">(</span><span class="s">&quot;pause&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="_2">具体实现</h3>
 <h4 id="_3">初始化</h4>
-<p>链表由节点组成，对于链表的初始化有如下两种方案：
-1. 直接在初始化的过程中生成节点。
+<p>链表由节点组成，对于链表的初始化有如下两种方案：<br />
+1. 直接在初始化的过程中生成节点。<br />
 2. 初始化一个空链表，之后使用插入节点的方法插入数据。</p>
 <p>链表通过指向其第一个节点（结构体）的指针来访问，那么对于空链表，其指向 NULL 即可。<code>struct student *head = NULL;</code>这样形成的空节点可由其他节点指向，但是不能指向其他节点（无法在这个空链表尾部新插入节点，需特殊处理）。</p>
 <h4 id="_4">在头部新插入节点</h4>
-<pre><code class="language-c">// 在链表头部添加新节点的函数
-struct student* insertNodeAtHead(struct student *head, long num, float score) {
-    // 分配内存给新节点
-    struct student *newNode = (struct student*)malloc(sizeof(struct student));
+<div class="highlight"><pre><span></span><code><span class="c1">// 在链表头部添加新节点的函数</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">student</span><span class="o">*</span><span class="w"> </span><span class="n">insertNodeAtHead</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">student</span><span class="w"> </span><span class="o">*</span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 分配内存给新节点</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">student</span><span class="w"> </span><span class="o">*</span><span class="n">newNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">student</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">student</span><span class="p">));</span>
 
-    // 初始化新节点的数据成员
-    newNode-&gt;num = num;
-    newNode-&gt;score = score;
+<span class="w">    </span><span class="c1">// 初始化新节点的数据成员</span>
+<span class="w">    </span><span class="n">newNode</span><span class="o">-&gt;</span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
+<span class="w">    </span><span class="n">newNode</span><span class="o">-&gt;</span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">score</span><span class="p">;</span>
 
-    // 将新节点的 next 指针设置为当前链表的头节点
-    newNode-&gt;next = head;
+<span class="w">    </span><span class="c1">// 将新节点的 next 指针设置为当前链表的头节点</span>
+<span class="w">    </span><span class="n">newNode</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">;</span>
 
-    // 更新头指针，使其指向新节点
-    return newNode;
-}
-</code></pre>
+<span class="w">    </span><span class="c1">// 更新头指针，使其指向新节点</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">newNode</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>调用的时候使用 head = insertNodeAtHead(head, num, score) 即可。</p>
 <h4 id="_5">交换节点</h4>
 <p>a-&gt;结点1-&gt;b，c-&gt;结点2-&gt;d。</p>
