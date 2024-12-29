@@ -1,0 +1,22 @@
+site_name: 凌六の博客
+
+# nav:
+# 这部分是自定义导航页用的，目前懒得写
+#   - Home: index.md
+#   - CTF:
+#     - BMP 位图详解: CTF\BMP 位图详解.md
+
+# markdown_extensions:
+  # - toc:
+    # baselevel: 0
+      # permalink: "#" # 给每个标题右边加上个永久链接
+
+theme:
+  name: material
+  locale: zh_CN
+  highlightjs: True
+  hljs_languages:
+    - python
+
+plugins:
+  - mermaid2
