@@ -18,5 +18,16 @@ theme:
   hljs_languages:
     - python
 
+site_url: https://zero6six.github.io/
+
+markdown_extensions:
+  - nl2br
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
 plugins:
   - mermaid2
+  - search
+  - callouts
+  - autorefs

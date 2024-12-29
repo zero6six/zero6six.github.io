@@ -1,17 +1,5 @@
-# Welcome to MkDocs
+# 凌六博客
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+欢迎来到本人搭建的博客。
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+由于源 Markdown 文件是 obsidian 格式的，所以可能有些显示问题。
