@@ -13,5 +13,5 @@
 
 ## 与上游仓库同步
 
-1. 进行 [[Github 工作流#^88de6c|1.]] (在 my-feature 进行的 commit 不会被 pull 所覆盖)后使用 `git checkout [<branch>]` 切换到本地主分支并使用 `git pull` 将远端主分支更改同步到本地的主分支。
+1. 进行 [1.](#^88de6c) (在 my-feature 进行的 commit 不会被 pull 所覆盖)后使用 `git checkout [<branch>]` 切换到本地主分支并使用 `git pull` 将远端主分支更改同步到本地的主分支。
 2. 使用 `git checkout my-feature` 并使用 `git rebase [<main branch>]`。以此切换到本地 my-feature 分支并在更新后的基础上进行改动。

@@ -20,4 +20,4 @@ en.get() # 读取文本
 
 Entry 也有 bg 和 fg 的设置。
 
-![[Label#设置]]
+![Label \> 设置](Label.md#设置)

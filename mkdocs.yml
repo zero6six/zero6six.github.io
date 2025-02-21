@@ -13,12 +13,20 @@ site_name: 凌六の博客
 
 theme:
   name: material
+  # custom_dir: overrides
+
   locale: zh_CN
   highlightjs: True
   hljs_languages:
     - python
 
 site_url: https://zero6six.github.io/
+
+extra_css:
+  - custom/style.css
+
+extra_javascript:
+  - custom/background-switcher.js
 
 markdown_extensions:
   - nl2br

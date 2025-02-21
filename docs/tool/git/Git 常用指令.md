@@ -2,6 +2,8 @@
 
 [git 速查手册](https://www.bookstack.cn/books/learngit-basic)
 
+https://ohshitgit.com/zh
+
 ## 文件更改
 
 使用`git reset --soft HEAD [文件名]`来取消 add 状态。

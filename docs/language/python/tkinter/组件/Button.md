@@ -14,7 +14,7 @@ btn.config(bg='skyblue', width=10, height=5) # 此处宽x高类似网格分布�
 
 ### 设置图片
 
-![[image#^bcacdb]]
+![image \> ^bcacdb](image.md#^bcacdb)
 
 ```python
 btn.config(image=img)

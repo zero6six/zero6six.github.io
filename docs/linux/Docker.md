@@ -29,7 +29,7 @@ Docker容器的生命周期状态包括以下几种：
 2. **启动容器**：`docker start [CONTAINER]` 或 `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`后者相当于创建+运行，前者就是运行已经创建的或者已停止的、已暂停的。
 3. **停止容器**：`docker stop [CONTAINER]`
 4. **强制停止容器**：`docker kill [CONTAINER]`
-5. **重启容器**：`docker restart [CONTAINER]` 相当于 stop + restart。
+5. **重启容器**：`docker restart [CONTAINER]` 相当于 stop + start。
 6. **删除容器**：`docker rm [CONTAINER]`（需先停止容器）
 7. **查看容器状态**：`docker ps`（查看正在运行的容器）和`docker ps -a`（查看所有容器，包括已停止的）
 8. **查看容器日志**：`docker logs [CONTAINER]`

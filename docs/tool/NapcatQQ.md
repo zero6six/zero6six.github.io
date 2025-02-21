@@ -7,5 +7,4 @@
 
 那就是 `sudo docker run -d -e ACCOUNT=xxxxxx -e WSR_ENABLE=true -e NAPCAT_GID=0 -e NAPCAT_UID=0 -e WS_URLS='[]' --network host --privileged --name napcat --restart=always docker.1panel.dev/mlikiowa/napcat-docker:latest`
 
-
-``
+网络相关配置另见 https://docs.langbot.app/deploy/network-details ，虽然这是另一个机器人框架。

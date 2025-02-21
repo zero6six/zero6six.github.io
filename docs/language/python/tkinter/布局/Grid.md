@@ -1,6 +1,6 @@
 网格的索引先列再行，从 0 开始。
 
-![[Pasted image 20231230223726.png]]
+![Pasted image 20231230223726.png](attachments/Pasted%20image%2020231230223726.png)
 
 每个格子的大小受到所在位置元件的行间距与列间距共同影响。
 

