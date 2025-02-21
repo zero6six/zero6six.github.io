@@ -47,6 +47,8 @@
     
       <link rel="stylesheet" href="../../../custom/style.css">
     
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -3319,15 +3321,15 @@
 <span class="p">});</span>
 </code></pre></div>
 <h4 id="b2006">B2006 地球人口承载力估计</h4>
-<p>根据题意，设现有资源为 $\alpha$，增长速度为 $\beta$ 每年，每亿人要消耗 $\gamma$ 资源。可供 $x$ 亿人生活 $a$ 年，或供 $y$ 亿人生活 $b$ 年。则有：</p>
-<p>$$<br />
-\begin{align}<br />
-\alpha+\beta \cdot a &amp;= x \cdot \gamma \cdot a \<br />
-\alpha+\beta \cdot b &amp;= y \cdot \gamma \cdot b<br />
-\end{align}<br />
-$$</p>
-<p>要求 $n$ 使 $n\gamma=\beta$，由于 $a$，$b$，$x$，$y$ 为已知量，因此只需相减并变换即得到：</p>
-<p>$\frac{ax-by}{a-b}\gamma=\beta$，因此 $n=\frac{ax-by}{a-b}$。</p>
+<p>根据题意，设现有资源为 <span class="arithmatex">\(\alpha\)</span>，增长速度为 <span class="arithmatex">\(\beta\)</span> 每年，每亿人要消耗 <span class="arithmatex">\(\gamma\)</span> 资源。可供 <span class="arithmatex">\(x\)</span> 亿人生活 <span class="arithmatex">\(a\)</span> 年，或供 <span class="arithmatex">\(y\)</span> 亿人生活 <span class="arithmatex">\(b\)</span> 年。则有：</p>
+<div class="arithmatex">\[
+\begin{align}
+\alpha+\beta \cdot a &amp;= x \cdot \gamma \cdot a \\
+\alpha+\beta \cdot b &amp;= y \cdot \gamma \cdot b
+\end{align}
+\]</div>
+<p>要求 <span class="arithmatex">\(n\)</span> 使 <span class="arithmatex">\(n\gamma=\beta\)</span>，由于 <span class="arithmatex">\(a\)</span>，<span class="arithmatex">\(b\)</span>，<span class="arithmatex">\(x\)</span>，<span class="arithmatex">\(y\)</span> 为已知量，因此只需相减并变换即得到：</p>
+<p><span class="arithmatex">\(\frac{ax-by}{a-b}\gamma=\beta\)</span>，因此 <span class="arithmatex">\(n=\frac{ax-by}{a-b}\)</span>。</p>
 <div class="highlight"><pre><span></span><code><span class="nx">process</span><span class="p">.</span><span class="nx">stdin</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">();</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">);</span>
@@ -3392,6 +3394,12 @@ $$</p>
       <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
         <script src="../../../custom/background-switcher.js"></script>
+      
+        <script src="../../../custom/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
       
     
   </body>
