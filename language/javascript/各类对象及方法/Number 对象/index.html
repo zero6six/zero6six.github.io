@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://zero6six.github.io/language/javascript/%E5%90%84%E7%B1%BB%E5%AF%B9%E8%B1%A1%E5%8F%8A%E6%96%B9%E6%B3%95/Number%20%E5%AF%B9%E8%B1%A1/">
       
       
-        <link rel="prev" href="../../%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/">
+        <link rel="prev" href="../Math%20%E5%AF%B9%E8%B1%A1/">
       
       
         <link rel="next" href="../String%20%E5%AF%B9%E8%B1%A1/">
@@ -1328,11 +1328,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%85%A8%E5%B1%80%E5%B1%9E%E6%80%A7%E5%8F%8A%E6%96%B9%E6%B3%95/" class="md-nav__link">
+      <a href="../../%E5%85%A8%E5%B1%80%E5%B1%9E%E6%80%A7%E5%8F%8A%E5%87%BD%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    全局属性及方法
+    全局属性及函数
   </span>
   
 
@@ -1399,6 +1399,27 @@
             各类对象及方法
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Math%20%E5%AF%B9%E8%B1%A1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Math 对象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1616,6 +1637,27 @@
   
   <span class="md-ellipsis">
     洛谷入门与面试题解
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nodejs/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    配置环境
   </span>
   
 
@@ -3199,6 +3241,18 @@
 <div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.56789</span><span class="p">;</span><span class="w">  </span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">n</span><span class="o">=</span><span class="nx">num</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
 <span class="c1">// 5.57</span>
+</code></pre></div>
+<p>若需要标准的四舍五入，我们可以用可以四舍五入至整数的 <a href="../Math%20%E5%AF%B9%E8%B1%A1/#round">round</a> 方法来自己实现。</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">myToFixed</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span><span class="w"> </span><span class="nx">digits</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 这样子返回的是 Number</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="nx">digits</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">num</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">factor</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">factor</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// 若需要补 0，自行再用一遍 toFixed，用完是 String</span>
+<span class="p">}</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myToFixed</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span><span class="w"> </span><span class="c1">// 输出: 3.14</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myToFixed</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">));</span><span class="w"> </span><span class="c1">// 输出: 3.142</span>
 </code></pre></div>
 <h4 id="tostring">toString</h4>
 <p>把数字转换为字符串，没啥可说的。</p>
