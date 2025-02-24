@@ -11,7 +11,7 @@
     transition: opacity 1s ease-in-out;
 }
 
-/* 添加遮罩层提升文字可读性，从上到不透明度线性从 0.8 变化到 0.4 */
+/* 添加遮罩层提升文字可读性，从上到不透明度线性从 0.8 变化到 0.7 */
 .background-container::after {
     content: "";
     position: absolute;
@@ -19,7 +19,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.7));
 }
 
 /* 调整内容层级 */

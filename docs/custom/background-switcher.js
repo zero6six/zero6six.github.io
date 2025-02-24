@@ -4,17 +4,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const images = [
         '/custom/bg/pic1.jpg',
         '/custom/bg/pic2.jpg',
-        '/custom/bg/pic3.jpg',
+        // '/custom/bg/pic3.jpg',
         '/custom/bg/pic4.jpg',
         '/custom/bg/pic5.jpg',
         '/custom/bg/pic6.jpg',
-        '/custom/bg/pic7.jpg',
+        // '/custom/bg/pic7.jpg',
         '/custom/bg/pic8.jpg',
         '/custom/bg/pic9.jpg',
         '/custom/bg/pic10.jpg',
         '/custom/bg/pic11.jpg',
         '/custom/bg/pic12.jpg',
-        '/custom/bg/pic13.png',
+        // '/custom/bg/pic13.png',
     ];
 
     // 创建背景容器
