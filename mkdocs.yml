@@ -28,7 +28,7 @@ extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
 
 extra_javascript:
-  - custom/background-switcher.js
+  - custom/myCustom.js
 
   - custom/katex.js
   - https://unpkg.com/katex@0/dist/katex.min.js
