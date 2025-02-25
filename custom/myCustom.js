@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     // 背景图片列表（根据实际路径修改）
-
     const images = [
         '/custom/bg/pic1.jpg',
         '/custom/bg/pic2.jpg',
@@ -50,3 +49,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // 每 1 分钟切换一次（单位：毫秒）
     setInterval(changeBackground, 60000);
 });
+
+// 删除特定元素以避免手机端无法选择目录
+// 选择符合条件的 <label> 元素
+const labelElement = document.querySelector('label.md-overlay[for="__drawer"]');
+
+// 检查元素是否存在
+if (labelElement) {
+  // 如果存在，则删除该元素
+  labelElement.remove();
+} else {
+  console.log('未找到符合条件的 <label> 元素');
+}
