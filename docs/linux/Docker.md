@@ -71,3 +71,58 @@ docker run -d \
    ```sh
    docker run --network host my_container_image
    ```
+
+### 日志
+
+要查看 Docker 容器最近的日志，可以使用 `docker logs` 命令。以下是一些常用的选项：
+
+1. **查看最近的日志**：
+   ```bash
+   docker logs <container_name_or_id>
+   ```
+
+2. **查看最近的 N 行日志**：
+   ```bash
+   docker logs --tail <N> <container_name_or_id>
+   ```
+   例如，查看最近的 10 行日志：
+   ```bash
+   docker logs --tail 10 <container_name_or_id>
+   ```
+
+3. **实时查看日志（类似于 `tail -f`）**：
+   ```bash
+   docker logs -f <container_name_or_id>
+   ```
+
+4. **查看指定时间范围内的日志**：
+   ```bash
+   docker logs --since <time> <container_name_or_id>
+   ```
+   例如，查看过去 5 分钟的日志：
+   ```bash
+   docker logs --since 5m <container_name_or_id>
+   ```
+
+5. **查看日志并显示时间戳**：
+   ```bash
+   docker logs -t <container_name_or_id>
+   ```
+
+6. **组合使用多个选项**：
+   ```bash
+   docker logs --tail 10 -f -t <container_name_or_id>
+   ```
+   这将显示最近的 10 行日志，并实时跟踪新日志，同时显示时间戳。
+
+### 示例
+假设你的容器名称为 `my_container`，你可以使用以下命令查看最近的 20 行日志并实时跟踪：
+```bash
+docker logs --tail 20 -f my_container
+```
+
+### 注意事项
+- `<container_name_or_id>` 可以是容器的名称或 ID。
+- 如果容器已经停止，你仍然可以查看其日志。
+
+通过这些命令，你可以方便地查看 Docker 容器的日志信息。
