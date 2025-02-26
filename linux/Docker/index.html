@@ -2440,6 +2440,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      日志
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      注意事项
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3250,6 +3277,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      日志
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      注意事项
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3320,6 +3374,57 @@
 <p>当你运行一个新的 Docker 容器时，可以通过添加 <code>--network host</code> 选项来让容器使用宿主机的网络。例如：</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>my_container_image
 </code></pre></div>
+<h3 id="_6">日志</h3>
+<p>要查看 Docker 容器最近的日志，可以使用 <code>docker logs</code> 命令。以下是一些常用的选项：</p>
+<ol>
+<li>
+<p><strong>查看最近的日志</strong>：<br />
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>&lt;container_name_or_id&gt;
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>查看最近的 N 行日志</strong>：<br />
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>--tail<span class="w"> </span>&lt;N&gt;<span class="w"> </span>&lt;container_name_or_id&gt;
+</code></pre></div><br />
+   例如，查看最近的 10 行日志：<br />
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>--tail<span class="w"> </span><span class="m">10</span><span class="w"> </span>&lt;container_name_or_id&gt;
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>实时查看日志（类似于 <code>tail -f</code>）</strong>：<br />
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>&lt;container_name_or_id&gt;
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>查看指定时间范围内的日志</strong>：<br />
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>--since<span class="w"> </span>&lt;time&gt;<span class="w"> </span>&lt;container_name_or_id&gt;
+</code></pre></div><br />
+   例如，查看过去 5 分钟的日志：<br />
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>--since<span class="w"> </span>5m<span class="w"> </span>&lt;container_name_or_id&gt;
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>查看日志并显示时间戳</strong>：<br />
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>-t<span class="w"> </span>&lt;container_name_or_id&gt;
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>组合使用多个选项</strong>：<br />
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>--tail<span class="w"> </span><span class="m">10</span><span class="w"> </span>-f<span class="w"> </span>-t<span class="w"> </span>&lt;container_name_or_id&gt;
+</code></pre></div><br />
+   这将显示最近的 10 行日志，并实时跟踪新日志，同时显示时间戳。</p>
+</li>
+</ol>
+<h3 id="_7">示例</h3>
+<p>假设你的容器名称为 <code>my_container</code>，你可以使用以下命令查看最近的 20 行日志并实时跟踪：<br />
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>--tail<span class="w"> </span><span class="m">20</span><span class="w"> </span>-f<span class="w"> </span>my_container
+</code></pre></div></p>
+<h3 id="_8">注意事项</h3>
+<ul>
+<li><code>&lt;container_name_or_id&gt;</code> 可以是容器的名称或 ID。</li>
+<li>如果容器已经停止，你仍然可以查看其日志。</li>
+</ul>
+<p>通过这些命令，你可以方便地查看 Docker 容器的日志信息。</p>
 
 
 

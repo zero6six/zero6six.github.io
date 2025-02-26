@@ -16,28 +16,33 @@ document.addEventListener('DOMContentLoaded', function() {
         // '/custom/bg/pic13.png',
     ];
 
-    // 创建背景容器
     const bgContainer = document.createElement('div');
     bgContainer.className = 'background-container';
     document.body.prepend(bgContainer);
 
-    // 预加载图片
+    // 从 sessionStorage 获取或生成随机索引
+    let currentIndex = sessionStorage.getItem('bgIndex');
+    if (currentIndex === null) {
+        currentIndex = Math.floor(Math.random() * images.length);
+        sessionStorage.setItem('bgIndex', currentIndex);
+    } else {
+        currentIndex = parseInt(currentIndex);
+    }
+
     function preloadImages(urls) {
         urls.forEach(url => {
             new Image().src = url;
         });
     }
 
-    // 切换背景函数
-    let currentIndex = Math.floor(Math.random() * images.length);
     function changeBackground() {
         bgContainer.style.opacity = 0;
         
         setTimeout(() => {
-            // 替换原来的currentIndex递增逻辑
-            currentIndex = Math.floor(Math.random() * images.length);
+            currentIndex = (currentIndex + 1) % images.length;
+            sessionStorage.setItem('bgIndex', currentIndex); // 保存新索引
             bgContainer.style.backgroundImage = `url(${images[currentIndex]})`;
-            bgContainer.style.opacity = 1; // 最终透明度
+            bgContainer.style.opacity = 1;
         }, 1000);
     }
 
@@ -46,8 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     bgContainer.style.backgroundImage = `url(${images[currentIndex]})`;
     bgContainer.style.opacity = 1;
 
-    // 每 1 分钟切换一次（单位：毫秒）
-    setInterval(changeBackground, 60000);
+    setInterval(changeBackground, 60000); // 1 分钟切换一次背景
 });
 
 // 删除特定元素以避免手机端无法选择目录
