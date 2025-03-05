@@ -1,6 +1,10 @@
 
 https://www.runoob.com/docker/docker-start-stop-restart-command.html
 
+### 安装
+
+参考阿里云的指南 https://help.aliyun.com/zh/ecs/use-cases/install-and-use-docker#7112366a92vay 。
+
 ### 连接
 
 使用 `docker attach mc` 附加到容器，`ctrl+p ctrl+q` 来退出。

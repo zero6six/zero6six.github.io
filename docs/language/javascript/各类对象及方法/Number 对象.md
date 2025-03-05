@@ -1,4 +1,6 @@
 
+[Math 对象](Math%20对象.md)
+
 ### 方法
 
 #### toFixed

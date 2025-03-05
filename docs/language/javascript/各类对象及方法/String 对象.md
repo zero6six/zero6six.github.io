@@ -49,6 +49,10 @@ concat() 方法用于连接两个或多个字符串。
 var str="How are you doing today?";  
 var n=str.split(" ");
 // ["How","are","you","doing","today?"]
+var n=str.trim().split(/[ ?]/) // 使用正则表达式 [ ?] 匹配“ ”或“?”
+// 先 trim 防止末尾留个空字符串
+
+// ["How","are","you","doing","today"]
 ```
 
 split() 方法用于把一个字符串分割成字符串数组。

@@ -1,5 +1,7 @@
 
-https://www.runoob.com/jsref/jsref-obj-math.html
+[runnoob](https://www.runoob.com/jsref/jsref-obj-math.html)
+
+[Number 对象](Number%20对象.md)
 
 ### 方法
 
@@ -23,7 +25,7 @@ Math.round(2.5);
 
 #### trunc
 
-把数字的小数部分去掉。
+把数字的小数部分去掉。可以看作向 0 取整。
 
 ```js
 Math.trunc(8.76);
