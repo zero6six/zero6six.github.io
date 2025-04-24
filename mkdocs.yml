@@ -43,7 +43,6 @@ markdown_extensions:
       generic: True
 
 plugins:
-  - mermaid2
   - search
   - callouts
   - autorefs
