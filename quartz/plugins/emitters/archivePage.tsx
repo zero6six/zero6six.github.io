@@ -69,7 +69,7 @@ export const ArchivePage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
         externalResources,
         cfg,
         children: [],
-        tree: { type: 'root', children: [] },
+        tree: { type: 'root', children: [] } as any,
         allFiles,
       }
 
