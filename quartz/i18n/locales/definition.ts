@@ -84,5 +84,9 @@ export interface Translation {
       showingFirst: (variables: { count: number }) => string
       totalTags: (variables: { count: number }) => string
     }
+    archive: {
+      title: string
+      totalCount: (variables: { count: number }) => string
+    }
   }
 }

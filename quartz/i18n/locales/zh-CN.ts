@@ -81,5 +81,9 @@ export default {
       showingFirst: ({ count }) => `显示前${count}个标签。`,
       totalTags: ({ count }) => `总共有${count}个标签。`,
     },
+    archive: {
+      title: "归档",
+      totalCount: ({ count }) => `总共有${count}篇笔记。`,
+    },
   },
 } as const satisfies Translation

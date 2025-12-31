@@ -1,8 +1,7 @@
 ---
-title: Welcome to Quartz
+title: 凌六の博客
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+本人的博客，于 2025/12/31 搬迁至 Quartz 平台，搭建教程见[这里](https://quartz.jzhao.xyz)。
 
-测试
+由于本人的大部分笔记都是拾人牙慧，没有多少有价值、值得分享的原创内容。因此相较于分享知识，这个站点更多地是作为个人的生活记录与随笔分享。

@@ -83,5 +83,9 @@ export default {
       showingFirst: ({ count }) => `Showing first ${count} tags.`,
       totalTags: ({ count }) => `Found ${count} total tags.`,
     },
+    archive: {
+      title: "Archive",
+      totalCount: ({ count }) => `Total ${count} notes.`,
+    },
   },
 } as const satisfies Translation
