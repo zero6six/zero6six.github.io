@@ -71,7 +71,13 @@ const config: QuartzConfig = {
       Plugin.TableOfContents({ maxDepth: 4 }),
       Plugin.CrawlLinks({ markdownLinkResolution: "relative" }),
       Plugin.Description(),
-      Plugin.Latex({ renderEngine: "katex" }),
+      Plugin.Latex({
+        renderEngine: "katex",
+        // 添加以下配置来忽略 Unicode 字符警告
+        katexOptions: {
+          strict: true, 
+        }
+      }),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
@@ -90,7 +96,7 @@ const config: QuartzConfig = {
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
       // Comment out CustomOgImages to speed up build time
-      Plugin.CustomOgImages(),
+      // Plugin.CustomOgImages(),
     ],
   },
 }
