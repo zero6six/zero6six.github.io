@@ -77,6 +77,6 @@ icon=bootloader/res/icon_payload.bmp
 
 # 后日谈
 
-过了几天想装 tesla 模块，然后找到了[集成包](https://github.com/laila509/Atmosphere-syspatch/releases)，早知道直接覆盖集成包了，不用去各处寻找资源，然后用 Daybreak 升级固件。
+过了几天想装 tesla 模块，然后找到了[集成包](https://github.com/laila509/Atmosphere-syspatch/releases)，早知道直接覆盖集成包了，不用去各处寻找资源，覆盖之后依然是使用 Daybreak 升级固件。
 
 注意：集成包的真实系统未屏蔽序列号和任天堂服务器，真实系统内乱搞可能 ban 机，记得手动调。
