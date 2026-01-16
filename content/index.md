@@ -1,5 +1,6 @@
 ---
 title: 凌六の博客
+created: 2025-12-31
 ---
 
 本人的博客，于 2025/12/31 搬迁至 Quartz 平台，搭建教程见[这里](https://quartz.jzhao.xyz)。
